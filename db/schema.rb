@@ -11,15 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120302021304) do
+ActiveRecord::Schema.define(:version => 20120302063753) do
+
+  create_table "contacts", :force => true do |t|
+    t.integer  "owner_id"
+    t.integer  "contact_id"
+    t.string   "contact_group"
+    t.string   "contact_alias"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "contacts", ["contact_id"], :name => "index_contacts_on_contact_id"
+  add_index "contacts", ["owner_id", "contact_id"], :name => "index_contacts_on_owner_id_and_contact_id", :unique => true
+  add_index "contacts", ["owner_id"], :name => "index_contacts_on_owner_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "password_digest"
     t.string   "remember_token"
+    t.integer  "utype",           :default => 0
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

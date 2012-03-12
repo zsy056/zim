@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title><%= title %></title>
-		<%= stylesheet_link_tag    "application", :media => "all" %>
-		<%= javascript_include_tag "application" %>
-		<%= csrf_meta_tags %>
-	</head>
-	<body>
-		<%= render 'layouts/header' %>
-		<% flash.each do |key, value| %>
-		<div class="flash <%= key %>">
-			<%= value %>
-		</div>
-		<% end %>
-		<%= yield %>
-		<%= debug(params) if Rails.env.development? %>
-	</body>
+  <head>
+    <title><%= title %></title>
+    <%= render 'layouts/stylesheets' %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "jquery-ui-1.8.18.custom.min" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div>
+      <%= render 'layouts/header' %>
+      <div class="container">
+        <% flash.each do |key, value| %>
+        <div class="flash <%= key %>">
+          <%= value %>
+        </div>
+        <% end %>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+        <%= debug(params) if Rails.env.development? %>
+      </div>
+    </div>
+  </body>
 </html>
