@@ -7,8 +7,8 @@ development:
   adapter: mysql
   encoding: utf8
   database: zim_development
-  username: root
-  password: 000zim
+  username: zim
+  password: wNfLzs3mfPY4stJu
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -17,13 +17,15 @@ development:
 test:
   adapter: mysql
   encoding: utf8
+  username: zim
   database: zim_test
-  password: 000zim
+  password: wNfLzs3mfPY4stJu
   socket: /var/run/mysqld/mysqld.sock
 
 production:
   adapter: mysql
   encoding: utf8
+  username: zim
   database: zim_production
-  password: 000zim
+  password: wNfLzs3mfPY4stJu
   socket: /var/run/mysqld/mysqld.sock

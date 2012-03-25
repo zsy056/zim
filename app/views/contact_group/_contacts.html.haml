@@ -1,0 +1,12 @@
+%div{ :id => "dia_contacts", :title => "Contacts", :style => "padding: 5px 0 0 0" }
+  %form{ :style => "margin: 0 0 0 0" }
+    %input{ :type => "text", :class => "search-query", :placeholder => "Search" }
+  %div{ :id => "acc_groups" }
+    - for group_name, contacts in @groups
+    %h3
+      %a{ :href => "#" }= group_name
+    %div
+      %ul{ :id => "sortable" }
+        - for contact in contacts
+        %li{ :class => "ui-state-default" }
+          %span{ :class => "ui-icon ui-icon-arrowthick-2-n-s" }= contact.contact.name

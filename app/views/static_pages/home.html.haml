@@ -1,0 +1,30 @@
+%div{ :class => "center hero-unit" }
+  %h1 Zim
+  %p An online IM.
+  - if !signed_in?
+    = link_to 'Sign Up', signup_path
+  - if signed_in?
+    =render 'contact_group/contacts'
+    :javascript
+      $(function() {
+        $("#dia_contacts").dialog({
+          position : 'right',
+          width : 250,
+          minWidth : 250,
+          minHeight : 500,
+          resizeStop : function(event, ui) {
+            $('#acc_groups').accordion("resize");
+          }
+        });
+        $("#acc_groups").accordion({
+          fillSpace : true
+        });
+        $.ajax({
+          type : 'get',
+          url : '/contact_groups',
+          success : function() {
+            deleteLink.parent().parent().remove()
+          }
+        })
+      });
+  %div{ :id => "dialogs" }
