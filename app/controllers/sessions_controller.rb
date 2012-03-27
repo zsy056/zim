@@ -6,11 +6,12 @@ class SessionsController < ApplicationController
       redirect_to user
     else
       flash.now[:error] = 'Invalid email/password combination'
-      render 'new'
+      render :partial => 'new'
     end
   end
   
   def new
+    render :partial => 'new'
   end
   
   def destroy

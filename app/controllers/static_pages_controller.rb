@@ -5,5 +5,6 @@ class StaticPagesController < ApplicationController
 
   def help
     @title = 'Help'
+    render :partial => "help"
   end
 end

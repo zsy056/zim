@@ -1,0 +1,25 @@
+%div{ :id => "contacts-dialog", :title => "Contacts", :style => "padding: 5px 0 0 0" }
+  %form{ :style => "margin: 0 0 0 0" }
+    %input{ :type => "text", :class => "search-query", :placeholder => "Search" }
+  %div{ :id => "acc_groups" }
+    - for group_name, contacts in @groups
+      %h3
+        %a{ :href => "#" }= group_name
+      %div
+        %ul{ :id => "sortable" }
+          - for contact in contacts
+            %li{ :class => "ui-state-default" }
+              %span{ :class => "ui-icon ui-icon-arrowthick-2-n-s" }= contact.contact.name
+:javascript
+  $("#contacts-dialog").dialog({
+    position : 'right',
+    width : 250,
+    minWidth : 250,
+    minHeight : 500,
+    resizeStop : function(event, ui) {
+      $('#acc_groups').accordion("resize");
+    }
+  });
+  $("#acc_groups").accordion({
+    fillSpace : true
+  });

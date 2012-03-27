@@ -4,27 +4,8 @@
   - if !signed_in?
     = link_to 'Sign Up', signup_path
   - if signed_in?
-    =render 'contact_group/contacts'
+    %div{ :id => 'contacts-div' }
     :javascript
       $(function() {
-        $("#dia_contacts").dialog({
-          position : 'right',
-          width : 250,
-          minWidth : 250,
-          minHeight : 500,
-          resizeStop : function(event, ui) {
-            $('#acc_groups').accordion("resize");
-          }
-        });
-        $("#acc_groups").accordion({
-          fillSpace : true
-        });
-        $.ajax({
-          type : 'get',
-          url : '/contact_groups',
-          success : function() {
-            deleteLink.parent().parent().remove()
-          }
-        })
+        $("#contacts-div").load("#{contacts_path}");
       });
-  %div{ :id => "dialogs" }

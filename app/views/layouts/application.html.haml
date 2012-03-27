@@ -1,4 +1,4 @@
-!!!
+!!! 5
 %html
   %head
     %title= title
@@ -9,10 +9,43 @@
   %body
     %div
       = render 'layouts/header'
-      .container
+      %div{ :id => "container" }
         - flash.each do |key, value| 
           %div{ :class => "alert alert-#{key}" }
             = value
-        = yield
+        %div{ :id => "content" }
+          = yield
       = render 'layouts/footer'
       = debug(params) if Rails.env.development?
+    %div{ :id => "dialogs" }
+    :javascript
+      jQuery(function($) {
+        $("#help_nav")
+          .bind("ajax:success", function(evt, data, status, xhr) {
+            $("#content").html(xhr.responseText);
+          })
+          .bind("ajax:error", function() {
+            alert("Help ajax failed");
+          });
+     
+        $("#signin_nav")
+          .bind("ajax:success", function(evt, data, status, xhr) {
+            $("#dialogs").append(xhr.responseText);
+          })
+          .bind("ajax:error", function() {
+            alert("Signin ajax failed: ");
+          });
+      });
+      $(function() {
+        $("#signin_nav")
+          .click(function(event) {
+            if(document.getElementById("signin-dialog")) {
+              $("#signin-dialog").dialog( "open" );
+            } else {
+              $.get('#{signin_path}', undefined,
+                function(data, status, xhr) {
+                  $("#dialogs").append(xhr.responseText);
+                });
+            }
+        });
+      });

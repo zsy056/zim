@@ -1,5 +1,5 @@
 class ContactGroupsController < ApplicationController
-  #before_filter :signed_in_user
+  before_filter :signed_in_user
   def create
     current_user.add_contact_group!(params[:contact_group])
   end
@@ -20,5 +20,6 @@ class ContactGroupsController < ApplicationController
     for grp in grps
       @groups[grp.group_name] = current_user.contacts.find_all_by_contact_group(grp.id)
     end
+    render :partial => 'contacts'
   end
 end

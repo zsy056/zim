@@ -1,0 +1,20 @@
+%div{ :id => "signin-dialog", :title => "Sign in" }
+  %div
+    = form_for(:session, url: sessions_path, :remote => true) do |f|
+      = f.label :email
+      %br
+      = f.text_field :email
+      = f.label :password
+      %br
+      = f.password_field :password
+      = f.submit "Sign in"
+    %p
+      New user?
+      = link_to "Sign up now!", signup_path
+  :javascript
+    $(function() {
+      $("#signin-dialog").dialog({
+          autoOpen: true,
+          modal: true
+      });
+    });
