@@ -1,5 +1,6 @@
 class ContactGroupsController < ApplicationController
   before_filter :signed_in_user
+
   def create
     current_user.add_contact_group!(params[:contact_group])
   end

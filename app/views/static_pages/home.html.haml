@@ -1,11 +1,16 @@
-%div{ :class => "center hero-unit" }
-  %h1 Zim
-  %p An online IM.
-  - if !signed_in?
-    = link_to 'Sign Up', signup_path
+.row-fluid
+  :css
+    #main { float: right; }
+    #contacts-div { float: left; overflow-y: auto; overflow-x: hidden; }
   - if signed_in?
-    %div{ :id => 'contacts-div' }
+    %div{ :id => "contacts-div" }
     :javascript
       $(function() {
         $("#contacts-div").load("#{contacts_path}");
       });
+  %div{ :class => "span8", :id => "main" }
+    %div{ :class => "center hero-unit" }
+      %h1 Zim
+      %p An online IM.
+      - if !signed_in?
+        = link_to 'Sign Up', signup_path

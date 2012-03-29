@@ -1,25 +1,54 @@
-%div{ :id => "contacts-dialog", :title => "Contacts", :style => "padding: 5px 0 0 0" }
-  %form{ :style => "margin: 0 0 0 0" }
-    %input{ :type => "text", :class => "search-query", :placeholder => "Search" }
-  %div{ :id => "acc_groups" }
-    - for group_name, contacts in @groups
-      %h3
-        %a{ :href => "#" }= group_name
-      %div
-        %ul{ :id => "sortable" }
-          - for contact in contacts
-            %li{ :class => "ui-state-default" }
-              %span{ :class => "ui-icon ui-icon-arrowthick-2-n-s" }= contact.contact.name
+%ul{ :id => "contacts" }
+  - for group_name, contacts in @groups
+    %li 
+      %a 
+        %span= group_name
+      %ul
+        - for contact in contacts
+          %li{ :onclick => "$.openChatDialog('#{contact.contact.id}', '#{contact.contact.name}');" }
+            %a 
+              %span
+                %img{ :src => "#{gravatar(contact.contact, :size => 28)}" }
+                %a= contact.contact.name
+:css
+  .chat-content { width: 320px; height: 300px; overflow-y: auto; }
+  .chat-input   { margin: 0; }
+  .dialogWithDropShadow
+  {
+         -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);  
+         -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+  }
 :javascript
-  $("#contacts-dialog").dialog({
-    position : 'right',
-    width : 250,
-    minWidth : 250,
-    minHeight : 500,
-    resizeStop : function(event, ui) {
-      $('#acc_groups').accordion("resize");
-    }
-  });
-  $("#acc_groups").accordion({
-    fillSpace : true
+    $(function() {
+      $.extend({ openChatDialog: function(id, name) {
+        var dialog_id = 'dialog'+id;
+        if(document.getElementById(dialog_id)) {
+          $('#'+dialog_id).wijdialog("open");
+        } else {
+          var tmp_dialog = document.createElement("div");
+          tmp_dialog.setAttribute("id", dialog_id);
+          tmp_dialog.setAttribute("title", name);
+          tmp_dialog.innerHTML = "<div class='chat-content' id='chat-"+id+"-content'>foobar</div><textarea id='chat-input-"+id+"' class='chat-input'></textarea> ";
+          document.getElementById('dialogs').appendChild(tmp_dialog);
+          $('#'+dialog_id).wijdialog({
+            autoOpen: true,
+            show: 'puff',
+            hide: 'explode',
+            collapsingAnimation: { animated: "puff", duration: 300, easing: "easeOutExpo" },
+            expandingAnimation: { animated: "highlight", duration: 300, easing: "easeOutExpo" },
+            width: 500,
+            buttons: {
+                    "Clear": function () {
+                      document.getElementById('chat-input-'+id).value = '';
+                    },
+                    "Send": function () {
+                       
+                    }
+            },
+            dialogClass: "dialogWithDropShadow"
+          });
+        }
+    }});
+    $("#contacts").wijtree();
+    document.getElementById("contacts-div").style.height=window.screen.height-200+"px";
   });
