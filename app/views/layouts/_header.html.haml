@@ -21,3 +21,20 @@
             %li= link_to "Sign in", "#signin", :id => "signin_nav"
           %form{ :class => "navbar-search pull-left" }
             %input{ :type => "text", :class => "search-query", :placeholder => "Search" }/
+:javascript
+  jQuery(function($) {
+    $("#signin_nav").bind('click', function(event) {
+        if(document.getElementById("signin-dialog")) {
+          $("#signin-dialog").wijdialog( "open" );
+        } else {
+          $.get('#{signin_path}', undefined,
+            function(data, status, xhr) {
+              $("#dialogs").append(xhr.responseText);
+            });
+        }
+    }).bind("ajax:success", function(evt, data, status, xhr) {
+        $("#dialogs").append(xhr.responseText);
+    }).bind("ajax:error", function() {
+        alert("Signin ajax failed: ");
+    });
+  });

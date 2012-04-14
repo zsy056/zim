@@ -4,13 +4,13 @@
     %meta{ :name => "viewport", :content => "minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, width=device-width, user-scalable=no"}
     %title= title
     = render 'layouts/stylesheets'
-    = javascript_include_tag :defaults, "http://localhost:9292/im.js"
+    = javascript_include_tag "http://localhost:9292/im.js"
     = javascript_include_tag 'application'
     = csrf_meta_tag
     :javascript
       $(function() {
         var faye = new Faye.Client('http://localhost:9292/im');
-        faye.subscribe('/messages/broadcast', function (data) {
+        faye.subscribe('/broadcast', function (data) {
           alert(data);
         });
       });
@@ -35,25 +35,4 @@
           .bind("ajax:error", function() {
             alert("Help ajax failed");
           });
-     
-        $("#signin_nav")
-          .bind("ajax:success", function(evt, data, status, xhr) {
-            $("#dialogs").append(xhr.responseText);
-          })
-          .bind("ajax:error", function() {
-            alert("Signin ajax failed: ");
-          });
-      });
-      $(function() {
-        $("#signin_nav")
-          .click(function(event) {
-            if(document.getElementById("signin-dialog")) {
-              $("#signin-dialog").dialog( "open" );
-            } else {
-              $.get('#{signin_path}', undefined,
-                function(data, status, xhr) {
-                  $("#dialogs").append(xhr.responseText);
-                });
-            }
-        });
       });

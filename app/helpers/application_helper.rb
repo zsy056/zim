@@ -10,8 +10,14 @@ module ApplicationHelper
   end
   
   def broadcast(channel, &block)
-    message = {:channel => channel, :data => capture(&block), :ext => {:auth_token => FAYE_TOKEN}}
+    sendmsg(['/broadcast'])
+  end
+  
+  def sendmsg(channels, &block)
     uri = URI.parse("http://localhost:9292/im")
-    Net::HTTP.post_form(uri, :message => message.to_json)
+    for channel in channels
+      message = {:channel => channel, :data => capture(&block), :ext => {:auth_token => FAYE_TOKEN}}
+      Net::HTTP.post_form(uri, :message => message.to_json)
+    end
   end
 end

@@ -2,6 +2,7 @@ Zim::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :contact_groups, only: [:index]
+  resources :messages, only: [:create]
   
   get "static_pages/home"
 

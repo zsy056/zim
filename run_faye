@@ -1,0 +1,2 @@
+#!/bin/bash
+rackup im.ru -s thin -E production
