@@ -1,0 +1,21 @@
+:plain
+  if(document.getElementById('help-dialog')) {
+    $('#help-dialog').wijdialog('open');
+  } else { 
+    $('#dialogs').append("#{ render :partial => 'help_contents' }");
+    $('#help-dialog').wijdialog({
+        autoOpen: true,
+        modal: true,
+        buttons: {
+          'OK': function() {
+            $('#help-dialog').wijdialog('close');
+          }
+        },
+        dialogClass: 'dialogWithDropShadow',
+        hide: 'explode',
+        collapsingAnimation: { 
+          animated: "puff", duration: 300, easing: "easeOutExpo" },
+        expandingAnimation: { 
+          animated: "highlight", duration: 300, easing: "easeOutExpo" }
+      });  
+  }

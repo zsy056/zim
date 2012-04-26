@@ -1,0 +1,10 @@
+- if signed_in?
+  location.reload();
+  $("#signin-dialog").wijdialog('close');
+- else
+  $('#signin-flash').replaceWith(" 
+  %section{ :id => "signin-flash" }<>
+    - flash.each do |key, value|
+      %div{ :class => "flash #{key}" }<
+        = value
+  ");

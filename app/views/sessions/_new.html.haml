@@ -1,5 +1,6 @@
 %div{ :id => "signin-dialog", :title => "Sign in" }
   %div
+    %section{ :id => "signin-flash" }
     = form_for(:session, url: sessions_path, :remote => true, :html => { :id => 'signin-form' }) do |f|
       = f.label :email
       %br
@@ -12,16 +13,6 @@
       = link_to "Sign up now!", signup_path
 :javascript
   $(function() {
-    $('#signin-form').submit(function() { 
-        var options = {
-          target:        '#output2',   // target element(s) to be updated with server response 
-          success: function(responseText, statusText) {
-            location.reload();
-          }
-        };
-        $(this).ajaxSubmit(options);
-        return false;
-    }); 
     $("#signin-dialog").wijdialog({
         autoOpen: true,
         modal: true,
@@ -31,14 +22,14 @@
               document.getElementById('signin-form').reset();
             },
             "Sign in": function () {
-              //document.getElementById('signin-form').submit();
               $('#signin-form').submit();
-              $("#signin-dialog").wijdialog('close');
             }
           },
         dialogClass: "dialogWithDropShadow",
         hide: 'explode',
-        collapsingAnimation: { animated: "puff", duration: 300, easing: "easeOutExpo" },
-        expandingAnimation: { animated: "highlight", duration: 300, easing: "easeOutExpo" }
+        collapsingAnimation: { 
+          animated: "puff", duration: 300, easing: "easeOutExpo" },
+        expandingAnimation: { 
+          animated: "highlight", duration: 300, easing: "easeOutExpo" }
     });
   });

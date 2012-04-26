@@ -5,6 +5,8 @@ class StaticPagesController < ApplicationController
 
   def help
     @title = 'Help'
-    render :partial => "help"
+    respond_to do |format|
+      format.js { render :partial => "help" }
+    end
   end
 end

@@ -26,13 +26,3 @@
       = render 'layouts/footer'
       = debug(params) if Rails.env.development?
     %div{ :id => "dialogs" }
-    :javascript
-      jQuery(function($) {
-        $("#help_nav")
-          .bind("ajax:success", function(evt, data, status, xhr) {
-            $("#content").html(xhr.responseText);
-          })
-          .bind("ajax:error", function() {
-            alert("Help ajax failed");
-          });
-      });
