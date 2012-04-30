@@ -1,0 +1,26 @@
+:plain
+  if(document.getElementById("dialog-#{@dialog_id}")) {
+    $("#dialog-#{@dialog_id}").wijdialog("open");
+  } else {
+    $("#dialogs").append("#{escape_javascript(render(:partial => 'msg_dialog'))}");
+    $("#dialog-#{@dialog_id}").wijdialog({
+      autoOpen: true,
+      show: 'puff',
+      hide: 'explode',
+      collapsingAnimation: 
+        { animated: "puff", duration: 300, easing: "easeOutExpo" },
+      expandingAnimation: 
+        { animated: "highlight", duration: 300, easing: "easeOutExpo" },
+      width: 500,
+      buttons: {
+        "Clear": function () {
+          $("#chat-input-#{@dialog_id}").val('');
+        },
+        "Send": function () {
+          $("#chat-input-#{@dialog_id}").submit();
+        }
+      },
+      dialogClass: "dialogWithDropShadow"
+    });
+  }
+    

@@ -1,0 +1,5 @@
+%div{ :id => "dialog-#{@dialog_id}", :title => "#{@contact_name}" }
+  .chat-content{ :id => "chat-content-#{@dialog_id}" }
+  = form_for Message.new, :remote => true, :html => { :id => "chat-#{@dialog_id}" } do |f|
+    = f.text_area :content, :class => 'chat-input', :rows => 3, :autofocus => true, :required => true, :id => "chat-input-#{@dialog_id}"
+    = f.hidden_field :to, :value => @dialog_id

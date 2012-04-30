@@ -1,0 +1,31 @@
+- to = @message.to
+- from = @message.from
+- sendmsg ["/#{to}"] do
+  :plain
+    if(document.getElementById("dialog-#{from}")) {
+      $("#dialog-#{from}").wijdialog('open');
+    } else {
+      $("#dialogs").append("#{escape_javascript(render(:partial => 'dialogs/msg_dialog'))}");
+      $("#dialog-#{from}").wijdialog({
+        autoOpen: true,
+        show: 'puff',
+        hide: 'explode',
+        collapsingAnimation:
+          { animated: "puff", duration: 300, easing: "easeOutExpo" },
+        expandingAnimation: 
+          { animated: "highlight", duration: 300, easing: "easeOutExpo" },
+        width: 500,
+        buttons: {
+          "Clear": function () {
+            $("#chat-input-#{from}").val('');
+          },
+          "Send": function () {
+            $("#chat-input-#{from}").submit();
+          }
+        },
+        dialogClass: "dialogWithDropShadow"
+      });
+    }
+  $("#chat-content-#{from}").append("#{escape_javascript render(:partial => 'show')}");
+$("#chat-content-#{to}").append("#{escape_javascript render(:partial => 'show')}");
+$("#chat-input-#{to}").val('');

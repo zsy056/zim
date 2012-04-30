@@ -1,0 +1,13 @@
+%div{ :id => "signin-dialog", :title => "Sign in" }
+  %div
+    %section{ :id => "signin-flash" }
+    = form_for(:session, url: sessions_path, :remote => true, :html => { :id => 'signin-form' }) do |f|
+      = f.label :email
+      %br
+      = f.text_field :email, :required => true
+      = f.label :password
+      %br
+      = f.password_field :password, :required => true
+    %p
+      New user?
+      = link_to "Sign up now!", signup_path

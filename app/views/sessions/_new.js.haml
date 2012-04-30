@@ -1,0 +1,24 @@
+:plain
+  if(document.getElementById('signin-dialog')) {
+    $('#signin-dialog').wijdialog('open');
+  } else {
+    $('#dialogs').append("#{escape_javascript(render(:partial => 'new_form' ))}");
+    $("#signin-dialog").wijdialog({
+      autoOpen: true,
+      modal: true,
+      buttons: {
+        "Clear": function () {
+          document.getElementById('signin-form').reset();
+        },
+        "Sign in": function () {
+          $('#signin-form').submit();
+        }
+      },
+      dialogClass: "dialogWithDropShadow",
+      hide: 'explode',
+      collapsingAnimation: { 
+        animated: "puff", duration: 300, easing: "easeOutExpo" },
+      expandingAnimation: { 
+        animated: "highlight", duration: 300, easing: "easeOutExpo" }
+    });
+  }

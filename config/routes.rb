@@ -2,7 +2,8 @@ Zim::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :contact_groups, only: [:index]
-  resources :messages, only: [:create]
+  resources :dialogs, only: [:show]
+  resources :messages, only: [:new, :create, :show]
   
   get "static_pages/home"
 
@@ -16,6 +17,9 @@ Zim::Application.routes.draw do
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/contacts', to: 'contact_groups#index'
+  match '/beat', to: 'sessions#beat'
+  #match '/dialogs/:dialog_id', to: 'dialogs#show', via: :show
+  #match '/msg/send', to: 'messages#create'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

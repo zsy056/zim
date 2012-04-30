@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   has_many(:contacts, foreign_key: "owner_id", dependent: :destroy)
   has_many(:contact_users, through: :contacts, source: :contact)
   has_many(:contact_groups, foreign_key: "owner_id", dependent: :destroy)
+  has_many(:messages, foreign_key: "from", dependent: :destroy)
+  has_many(:messages, foreign_key: "to", dependent: :destroy)
   
   attr_accessible :name, :email, :password, :password_confirmation
   has_secure_password

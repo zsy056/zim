@@ -4,9 +4,24 @@
     #contacts-div { float: left; overflow-y: auto; overflow-x: hidden; }
   - if signed_in?
     %div{ :id => "contacts-div" }
+    = form_for :beat, :url => beat_path, :remote => true, :html => { :id => 'heart-beat-form' } do |f|
+      = f.hidden_field :uid, :value => current_user.id
     :javascript
+      var time_out;
+      function heart_beat() {
+          $('#heart-beat-form').submit();
+          time_out = setTimeout('heart_beat()', 5000);
+      }
       $(function() {
         $("#contacts-div").load("#{contacts_path}");
+        var faye = new Faye.Client('http://localhost:9292/im');
+        faye.subscribe('/broadcast', function (data) {
+          alert(data);
+        });
+        faye.subscribe("/#{current_user.id}", function(data) {
+          eval(data);
+        });
+        time_out = setTimeout('heart_beat()', 5000);
       });
   %div{ :class => "span8", :id => "main" }
     %div{ :class => "center hero-unit" }

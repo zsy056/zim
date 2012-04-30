@@ -9,8 +9,8 @@ module ApplicationHelper
     end
   end
   
-  def broadcast(channel, &block)
-    sendmsg(['/broadcast'])
+  def broadcast(&block)
+    sendmsg(['/broadcast'], &block)
   end
   
   def sendmsg(channels, &block)

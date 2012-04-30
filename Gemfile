@@ -1,6 +1,6 @@
 source 'http://ruby.taobao.org'
 
-gem 'rails', '3.2.1'
+gem 'rails'
 
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
@@ -11,6 +11,9 @@ gem 'twitter-bootstrap-rails'
 gem 'haml'
 gem 'faye'
 gem 'thin'
+gem "jquery-validator"
+gem 'therubyracer'
+gem 'redis'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

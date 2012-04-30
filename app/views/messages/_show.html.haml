@@ -1,0 +1,6 @@
+%li
+  = current_user.name
+  \:
+  %span{ :class => 'msg-time' }= Time.now
+  %br
+  = @message.content

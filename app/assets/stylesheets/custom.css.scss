@@ -13,8 +13,7 @@ $grayMediumLight: #eaeaea;
 /* universal */
 
 html {
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
@@ -143,7 +142,7 @@ input, textarea, select, .uneditable-input {
   width: 100%;
   padding: 10px;
   height: auto;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   @include box_sizing;
 }
 
@@ -178,6 +177,10 @@ input, textarea, select, .uneditable-input {
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);  
   -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
 }
+
+.chat-content { width: 320px; height: 250px; overflow-y: auto; }
+
+.chat-input   { margin: 0 0 -20px 0; }
 
 // // fonts
 // @font-face { 

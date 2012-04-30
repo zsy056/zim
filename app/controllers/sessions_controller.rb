@@ -13,8 +13,19 @@ class SessionsController < ApplicationController
     end
   end
   
+  def beat
+    uri = URI.parse('http://localhost:9292/im')
+    message = {:channel => '/heart_beat', :ext => {:auth_token => FAYE_TOKEN, :id => current_user.id}}
+    Net::HTTP.post_form(uri, :message => message.to_json)
+    respond_to do |format|
+      format.js { render :partial => 'beat' }
+    end
+  end
+  
   def new
-    render :partial => 'new'
+    respond_to do |format|
+      format.js { render :partial => 'new' }
+    end
   end
   
   def destroy

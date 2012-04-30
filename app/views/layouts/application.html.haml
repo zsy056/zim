@@ -7,13 +7,6 @@
     = javascript_include_tag "http://localhost:9292/im.js"
     = javascript_include_tag 'application'
     = csrf_meta_tag
-    :javascript
-      $(function() {
-        var faye = new Faye.Client('http://localhost:9292/im');
-        faye.subscribe('/broadcast', function (data) {
-          alert(data);
-        });
-      });
   %body
     %div
       = render 'layouts/header'
@@ -23,6 +16,6 @@
             = value
         %div{ :id => "content", :class => "container-fluid" }
           = yield
-      = render 'layouts/footer'
-      = debug(params) if Rails.env.development?
+          = debug(params) if Rails.env.development?
+          = render 'layouts/footer'  
     %div{ :id => "dialogs" }

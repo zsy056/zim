@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120317003911) do
+ActiveRecord::Schema.define(:version => 20120429142529) do
 
   create_table "contact_groups", :force => true do |t|
     t.integer  "owner_id"
@@ -35,6 +35,18 @@ ActiveRecord::Schema.define(:version => 20120317003911) do
   add_index "contacts", ["contact_id"], :name => "index_contacts_on_contact_id"
   add_index "contacts", ["owner_id", "contact_id"], :name => "index_contacts_on_owner_id_and_contact_id", :unique => true
   add_index "contacts", ["owner_id"], :name => "index_contacts_on_owner_id"
+
+  create_table "messages", :force => true do |t|
+    t.integer  "from"
+    t.integer  "to"
+    t.boolean  "is_sent"
+    t.string   "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "messages", ["from"], :name => "index_messages_on_from"
+  add_index "messages", ["to"], :name => "index_messages_on_to"
 
   create_table "users", :force => true do |t|
     t.string   "name"

@@ -10,11 +10,11 @@
 #
 
 class ContactGroup < ActiveRecord::Base
-  attr_accessible (:group_name)
+  attr_accessible :group_name
   
-  belongs_to(:owner, class_name: "User")
+  belongs_to :owner, class_name: "User"
   
-  validates(:owner_id, presence: true)
+  validates :owner_id, presence: true
   
   def group_name
     read_attribute(:group_name) || 'Default'

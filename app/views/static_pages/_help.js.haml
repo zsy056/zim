@@ -2,7 +2,7 @@
   if(document.getElementById('help-dialog')) {
     $('#help-dialog').wijdialog('open');
   } else { 
-    $('#dialogs').append("#{ render :partial => 'help_contents' }");
+    $('#dialogs').append("#{escape_javascript(render(:partial => 'help_contents'))}");
     $('#help-dialog').wijdialog({
         autoOpen: true,
         modal: true,

@@ -12,7 +12,18 @@ class ServerAuth
   end
 end
 
+class ClientMonitor
+  def incoming(message, callback)
+    if message['channel'] == 'heart_beat'
+      $redis.setex message['ext']['id'], 13, "on"
+      puts message['ext']['id'].to_s + 'alive'
+    end
+    callback.call(message)
+  end
+end
+
 Faye::WebSocket.load_adapter('thin')
 faye_server = Faye::RackAdapter.new(:mount => '/im', :timeout => 45)
 faye_server.add_extension(ServerAuth.new)
+faye_server.add_extension(ClientMonitor.new)
 run faye_server
