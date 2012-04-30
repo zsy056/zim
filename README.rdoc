@@ -1,3 +1,3 @@
-== ZIM An online IM
+== ZIM, A web IM
 Rails + MySQL + faye + redis
 
