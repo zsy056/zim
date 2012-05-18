@@ -1,0 +1,21 @@
+:plain
+  if(document.getElementById('users-dialog')) {
+    $('#users-dialog').wijdialog('open');
+  } else { 
+    $('#dialogs').append("#{escape_javascript(render(:partial => 'index_contents'))}");
+    $('#usersdialog').wijdialog({
+        autoOpen: true,
+        modal: true,
+        buttons: {
+          'OK': function() {
+            $('#users-dialog').wijdialog('close');
+          }
+        },
+        dialogClass: 'dialogWithDropShadow',
+        hide: 'explode',
+        collapsingAnimation: { 
+          animated: "puff", duration: 300, easing: "easeOutExpo" },
+        expandingAnimation: { 
+          animated: "highlight", duration: 300, easing: "easeOutExpo" }
+      });  
+  }

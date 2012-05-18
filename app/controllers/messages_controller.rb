@@ -2,16 +2,23 @@ class MessagesController < ApplicationController
   before_filter :signed_in_user
   
   def create
-    @message = Message.new do |message|
-      message.from = current_user.id
-      message.to = Integer(params[:message][:to])
-      message.is_sent = ($redis.get(message.to) != nil) 
-      message.content = params[:message][:content]
-    end
+    to = Integer(params[:message][:to])
+    @message = Message.create(:content => params[:message][:content], :from => current_user.id,
+      :to => to, :is_sent => ($redis.get(to) != nil))
     @dialog_id = @message.from
     @contact_name = current_user.name
-    if @message.save
-    else
+    respond_to do |format|
+      if @message.save
+        if @message.is_sent
+          format.js { render :partial => 'online_msg' }
+        else
+          @sys_msg = 'Offline message has been sent.'
+          format.js { render :partial => 'offline_msg' }
+        end
+      else
+        @sys_msg = 'Offline message failed.'
+        format.js { render :partial => 'offline_msg'}
+      end
     end
   end
 

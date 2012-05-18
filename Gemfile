@@ -14,6 +14,8 @@ gem 'thin'
 gem "jquery-validator"
 gem 'therubyracer'
 gem 'redis'
+gem 'bb-ruby'
+gem "rails_kindeditor"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

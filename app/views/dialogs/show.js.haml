@@ -3,6 +3,11 @@
     $("#dialog-#{@dialog_id}").wijdialog("open");
   } else {
     $("#dialogs").append("#{escape_javascript(render(:partial => 'msg_dialog'))}");
+    $("#chat-input-#{@dialog_id}").wijeditor({
+      mode: "bbcode",
+      editorMode: "wysiwyg",
+      showFooter: false
+    });
     $("#dialog-#{@dialog_id}").wijdialog({
       autoOpen: true,
       show: 'puff',
@@ -11,16 +16,20 @@
         { animated: "puff", duration: 300, easing: "easeOutExpo" },
       expandingAnimation: 
         { animated: "highlight", duration: 300, easing: "easeOutExpo" },
-      width: 500,
+      width: 480,
       buttons: {
         "Clear": function () {
           $("#chat-input-#{@dialog_id}").val('');
         },
         "Send": function () {
-          $("#chat-input-#{@dialog_id}").submit();
+          $("#chat-#{@dialog_id}").submit();
         }
       },
-      dialogClass: "dialogWithDropShadow"
+      dialogClass: "dialogWithDropShadow",
+      resizable: false,
+      captionButtons: {
+        maximize: { visible: false }
+      }
     });
   }
     

@@ -1,5 +1,6 @@
 require 'faye'
 require File.expand_path('../config/initializers/faye_token.rb', __FILE__)
+require File.expand_path('../config/initializers/redis.rb', __FILE__)
 
 class ServerAuth
   def incoming(message, callback)
@@ -14,9 +15,9 @@ end
 
 class ClientMonitor
   def incoming(message, callback)
-    if message['channel'] == 'heart_beat'
+    if message['channel'] == '/heart_beat'
       $redis.setex message['ext']['id'], 13, "on"
-      puts message['ext']['id'].to_s + 'alive'
+      $stderr.puts message['ext']['id'].to_s + 'alive'
     end
     callback.call(message)
   end

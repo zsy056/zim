@@ -19,9 +19,7 @@ class Message < ActiveRecord::Base
   
   validates :from, presence: true
   validates :to, presence: true
-  validates :is_sent, presence: true
-  
-  def group_name
-    read_attribute(:group_name) || 'Default'
-  end
+  validates :is_sent, :inclusion => { :in => [true, false] }
+  validates :content, presence: true
+
 end
