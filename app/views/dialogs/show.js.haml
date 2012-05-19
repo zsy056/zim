@@ -26,10 +26,12 @@
         }
       },
       dialogClass: "dialogWithDropShadow",
-      resizable: false,
-      captionButtons: {
-        maximize: { visible: false }
-      }
+      //resizable: false,
+      //captionButtons: {
+      //  maximize: { visible: false }
+      //}
     });
   }
+  $("#dialog-#{@dialog_id}").wijsplitter({ orientation: "horizontal", splitterDistance: 250 });
+  $("#chat-content-#{@dialog_id}").wijsuperpanel();
     

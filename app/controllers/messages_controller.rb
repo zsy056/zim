@@ -3,8 +3,9 @@ class MessagesController < ApplicationController
   
   def create
     to = Integer(params[:message][:to])
-    @message = Message.create(:content => params[:message][:content], :from => current_user.id,
-      :to => to, :is_sent => ($redis.get(to) != nil))
+    @message = Message.create(:content => params[:message][:content],
+                              :from => current_user.id, :to => to,
+                              :is_sent => ($redis.get(to) != nil))
     @dialog_id = @message.from
     @contact_name = current_user.name
     respond_to do |format|

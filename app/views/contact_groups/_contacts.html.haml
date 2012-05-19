@@ -9,12 +9,15 @@
       %ul
         - for contact in contacts
           %li
-            = link_to(dialog_path(contact.contact.id), :remote => true) do 
+            - tid = contact.contact.id
+            = link_to(dialog_path(tid), :remote => true) do 
               %span  
                 %img{ :src => "#{gravatar(contact.contact, :size => 28)}" }
                 = contact.contact.name
+                %div{ :id => "online-status-#{tid}" }
+                  = online_status(tid)
 :javascript
     $(function() {
       $("#contacts").wijtree();
-      document.getElementById("contacts-div").style.height=window.screen.height-200+"px";   
+      document.getElementById("contacts-div").style.height=window.screen.height-160+"px";   
   });

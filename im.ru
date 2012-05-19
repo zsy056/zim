@@ -7,6 +7,8 @@ class ServerAuth
     if message['channel'] !~ %r{^/meta/}
       if message['ext']['auth_token'] != FAYE_TOKEN
         message['error'] = 'Invalid authentication token.'
+      elsif message['data'] != nil
+        $stderr.puts "[#{Time.now.to_s}] from: #{message['from']} to: #{message['channel']} #{message['data']}"
       end
     end
     callback.call(message)
@@ -14,10 +16,14 @@ class ServerAuth
 end
 
 class ClientMonitor
+
   def incoming(message, callback)
     if message['channel'] == '/heart_beat'
-      $redis.setex message['ext']['id'], 13, "on"
-      $stderr.puts message['ext']['id'].to_s + 'alive'
+      $redis.set message['ext']['id'], "on"
+      $stderr.puts "[#{Time.now.to_s}] #{message['ext']['id'].to_s} on"
+    elsif message['channel'] == '/leave'
+      $redis.del message['ext']['id']
+      $stderr.puts "[#{Time.now.to_s}] #{message['ext']['id'].to_s} off"
     end
     callback.call(message)
   end

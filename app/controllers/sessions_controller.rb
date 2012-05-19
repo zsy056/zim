@@ -14,11 +14,26 @@ class SessionsController < ApplicationController
   end
   
   def beat
-    uri = URI.parse('http://localhost:9292/im')
-    message = {:channel => '/heart_beat', :ext => {:auth_token => FAYE_TOKEN, :id => current_user.id}}
+    uri = URI.parse(FAYE_SERVER)
+    @my_id = current_user.id
+    message = {:channel => '/heart_beat', :ext => {:auth_token => FAYE_TOKEN, :id => @my_id}}
     Net::HTTP.post_form(uri, :message => message.to_json)
+    @online_msg = 'online'
+    @rcontacts = Contact.find_all_by_contact_id(@my_id)
     respond_to do |format|
-      format.js { render :partial => 'beat' }
+      format.js { render :partial => 'update_online' }
+    end
+  end
+
+  def leave
+    uri = URI.parse(FAYE_SERVER)
+    @my_id = current_user.id
+    message = {:channel => '/leave', :ext => {:auth_token => FAYE_TOKEN, :id => @my_id}}
+    Net::HTTP.post_form(uri, :message => message.to_json)
+    @online_msg = 'offline'
+    @rcontacts = Contact.find_all_by_contact_id(@my_id)
+    respond_to do |format|
+      format.js { render :partial => 'update_online' }
     end
   end
   

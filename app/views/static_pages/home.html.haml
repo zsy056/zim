@@ -4,14 +4,7 @@
     #contacts-div { float: left; overflow-y: auto; overflow-x: hidden; }
   - if signed_in?
     %div{ :id => "contacts-div" }
-    = form_for :beat, :url => beat_path, :remote => true, :html => { :id => 'heart-beat-form' } do |f|
-      = f.hidden_field :uid, :value => current_user.id
     :javascript
-      var time_out;
-      function heart_beat() {
-          $('#heart-beat-form').submit();
-          time_out = setTimeout('heart_beat()', 5000);
-      }
       $(function() {
         $("#contacts-div").load("#{contacts_path}");
         var faye = new Faye.Client('http://localhost:9292/im');
@@ -21,11 +14,27 @@
         faye.subscribe("/#{current_user.id}", function(data) {
           eval(data);
         });
-        time_out = setTimeout('heart_beat()', 5000);
       });
+      $(document).ready(function() {
+        window.onbeforeunload = function (){
+          $('#leave-form').submit(); 
+        };
+        $('#heart-beat-form').submit();
+      });
+     
+      
   %div{ :class => "span8", :id => "main" }
     %div{ :class => "center hero-unit" }
       %h1 Zim
-      %p An online IM.
+      %p An Web IM
       - if !signed_in?
         = link_to 'Sign Up', signup_path
+      - else
+        Hello,
+        = current_user.name
+    = debug(params) if Rails.env.development?
+    = render 'layouts/footer' 
+  = form_for :beat, :url => beat_path, :remote => true, :html => { :id => 'heart-beat-form' } do |f|
+    = f.hidden_field :uid, :value => current_user.id
+  = form_for :leave, :url => leave_path, :remote => true, :html => { :id => 'leave-form' } do |f|
+    = f.hidden_field :uid, :value => current_user.id

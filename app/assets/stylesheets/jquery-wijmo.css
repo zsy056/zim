@@ -1,11 +1,11 @@
 /* 
  * 
- * Wijmo Rocket Theme
+ * Wijmo Arctic Theme
  * http://wijmo.com/
  * 
  * Copyright(c) ComponentOne, LLC.  All rights reserved.
  * 
- * Dual licensed under the MIT or GPL Version 2 licenses.
+ * Dual licensed under the Wijmo Commercial or GNU GPL Version 3 licenses.
  * licensing@wijmo.com
  * http://wijmo.com/license
  * 
@@ -105,15 +105,15 @@
 
 
 /*
- * jQuery UI CSS Framework 1.8.7
+ * jQuery UI CSS Framework 1.8.11
  *
- * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
  * http://docs.jquery.com/UI/Theming/API
  *
- * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Arial,%20Helvetica,%20sans-serif&fwDefault=normal&fsDefault=1.2em&cornerRadius=4px&bgColorHeader=242122&bgTextureHeader=03_highlight_soft.png&bgImgOpacityHeader=15&borderColorHeader=404040&fcHeader=f4f4f9&iconColorHeader=f4f4f9&bgColorContent=f1f1f1&bgTextureContent=01_flat.png&bgImgOpacityContent=100&borderColorContent=e3e3e3&fcContent=404040&iconColorContent=00a6dd&bgColorDefault=242122&bgTextureDefault=03_highlight_soft.png&bgImgOpacityDefault=15&borderColorDefault=404040&fcDefault=fafafa&iconColorDefault=00a6dd&bgColorHover=00a6dd&bgTextureHover=03_highlight_soft.png&bgImgOpacityHover=35&borderColorHover=00a6dd&fcHover=fafafa&iconColorHover=fafafa&bgColorActive=242122&bgTextureActive=05_inset_soft.png&bgImgOpacityActive=15&borderColorActive=404040&fcActive=f1f1f1&iconColorActive=00a6dd&bgColorHighlight=9eca38&bgTextureHighlight=03_highlight_soft.png&bgImgOpacityHighlight=15&borderColorHighlight=9eca38&fcHighlight=eaffb9&iconColorHighlight=eaffb9&bgColorError=ca3838&bgTextureError=03_highlight_soft.png&bgImgOpacityError=15&borderColorError=ca3838&fcError=ff8f8f&iconColorError=ff8f8f&bgColorOverlay=00a6dd&bgTextureOverlay=08_diagonals_thick.png&bgImgOpacityOverlay=50&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=01_flat.png&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
+ * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Verdana,Arial,sans-serif&fwDefault=normal&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=cccccc&bgTextureHeader=03_highlight_soft.png&bgImgOpacityHeader=75&borderColorHeader=aaaaaa&fcHeader=222222&iconColorHeader=222222&bgColorContent=ffffff&bgTextureContent=01_flat.png&bgImgOpacityContent=75&borderColorContent=aaaaaa&fcContent=222222&iconColorContent=222222&bgColorDefault=e6e6e6&bgTextureDefault=02_glass.png&bgImgOpacityDefault=75&borderColorDefault=d3d3d3&fcDefault=555555&iconColorDefault=888888&bgColorHover=dadada&bgTextureHover=02_glass.png&bgImgOpacityHover=75&borderColorHover=999999&fcHover=212121&iconColorHover=454545&bgColorActive=ffffff&bgTextureActive=02_glass.png&bgImgOpacityActive=65&borderColorActive=aaaaaa&fcActive=212121&iconColorActive=454545&bgColorHighlight=fbf9ee&bgTextureHighlight=02_glass.png&bgImgOpacityHighlight=55&borderColorHighlight=fcefa1&fcHighlight=363636&iconColorHighlight=2e83ff&bgColorError=fef1ec&bgTextureError=02_glass.png&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=aaaaaa&bgTextureOverlay=01_flat.png&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=01_flat.png&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
  */
 
 
@@ -121,85 +121,75 @@
 ----------------------------------*/
 .ui-widget
 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
+
 }
 .ui-widget .ui-widget
 {
-    font-size: 1em;
+
 }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button
 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
+
 }
 .ui-widget-content
 {
-    border: 1px solid #e3e3e3;
-    background: #f1f1f1 url(images/ui-bg_flat_100_f1f1f1_40x100.png) 50% 50% repeat-x;
-    color: #404040;
+    border: 1px solid #aaaaaa;
+    background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
+    color: #222222;
 }
 .ui-widget-content a
 {
-    color: #404040;
+    color: #222222;
 }
 .ui-widget-header
 {
-    border: 1px solid #404040;
-    background: #242122 url(images/ui-bg_highlight-soft_15_242122_1x100.png) 50% 50% repeat-x;
-    color: #f4f4f9;
+    border: 1px solid #aaaaaa;
+    background: #cccccc url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
+    color: #222222;
     font-weight: bold;
 }
 .ui-widget-header a
 {
-    color: #f4f4f9;
+    color: #222222;
 }
 
 /* Interaction states
 ----------------------------------*/
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
 {
-    -moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.05);
-    -webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.05);
-    box-shadow: inset 1px 1px 0 rgba(255,255,255,0.05);
-    border: 1px solid #404040;
-    background: #242122 url(images/ui-bg_highlight-soft_15_242122_1x100.png) 50% 50% repeat-x;
+    border: 1px solid #d3d3d3;
+    background: #e6e6e6 url(images/ui-bg_smooth_75_e6e6e6_1x400.png) top repeat-x;
     font-weight: normal;
-    color: #fafafa;
+    color: #333333;
+    box-shadow: inset 0 1px 0 #fff;
 }
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited
 {
-    color: #fafafa;
+    color: #333333;
     text-decoration: none;
 }
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus
 {
-    -moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
-    -webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
-    box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
-    border: 1px solid #00a6dd;
-    background: #00a6dd url(images/ui-bg_highlight-soft_35_00a6dd_1x100.png) 50% 50% repeat-x;
+    border: 1px solid #d3d3d3;
+    background: #dadada url(images/ui-bg_smooth_75_fafafa_1x400.png) top repeat-x;
     font-weight: normal;
-    color: #fafafa;
+    color: #212121;
 }
 .ui-state-hover a, .ui-state-hover a:hover
 {
-    color: #fafafa;
+    color: #212121;
     text-decoration: none;
 }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active
 {
-    -moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
-    -webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
-    box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
-    border: 1px solid transparent;
-    background: #606154 url(images/ui-bg_highlight-soft_15_333333_1x100.png) top repeat-x;
+    border: 1px solid #aaaaaa;
+    background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) top repeat-x;
     font-weight: normal;
-    color: #fafafa;
+    color: #212121;
 }
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited
 {
-    color: #fafafa;
+    color: #212121;
     text-decoration: none;
 }
 .ui-widget :active
@@ -211,34 +201,27 @@
 ----------------------------------*/
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight
 {
-    background: #9eca38 url(images/ui-bg_highlight-soft_15_9eca38_1x100.png) 50% 50% repeat-x;
-    border: 1px solid #9eca38;
-    color: #304915;
-    -moz-box-shadow: inset 0px 1px 0 rgba(255,255,255,0.15);
-    -webkit-box-shadow: inset 0px 1px 0 rgba(255,255,255,0.15);
-    box-shadow: inset 0px 1px 0 rgba(255,255,255,0.15);
-    text-shadow: 1px 1px 0 rgba(255,255,255,0.50);
+    border: 1px solid #fcefa1;
+    background: #fbf9ee url(images/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x;
+    color: #363636;
 }
 .ui-state-highlight a, .ui-widget-content .ui-state-highlight a, .ui-widget-header .ui-state-highlight a
 {
-    color: #eaffb9;
+    color: #363636;
 }
 .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error
 {
-    border: 1px solid #ca3838;
-    background: #ca3838 url(images/ui-bg_highlight-soft_15_ca3838_1x100.png) 50% top repeat-x;
-    color: #fafafa;
-    -moz-box-shadow: inset 0px 1px 0 rgba(255,255,255,0.15);
-    -webkit-box-shadow: inset 0px 1px 0 rgba(255,255,255,0.15);
-    box-shadow: inset 0px 1px 0 rgba(255,255,255,0.15);
+    border: 1px solid #cd0a0a;
+    background: #fef1ec url(images/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x;
+    color: #cd0a0a;
 }
 .ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a
 {
-    color: #ff8f8f;
+    color: #cd0a0a;
 }
 .ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text
 {
-    color: #ff8f8f;
+    color: #cd0a0a;
 }
 .ui-priority-primary, .ui-widget-content .ui-priority-primary, .ui-widget-header .ui-priority-primary
 {
@@ -265,35 +248,35 @@
 {
     width: 16px;
     height: 16px;
-    background-image: url(images/ui-icons_00a6dd_256x240.png);
+    background-image: url(images/ui-icons_222222_256x240.png);
 }
 .ui-widget-content .ui-icon
 {
-    background-image: url(images/ui-icons_00a6dd_256x240.png);
+    background-image: url(images/ui-icons_222222_256x240.png);
 }
 .ui-widget-header .ui-icon
 {
-    background-image: url(images/ui-icons_f4f4f9_256x240.png);
+    background-image: url(images/ui-icons_222222_256x240.png);
 }
 .ui-state-default .ui-icon
 {
-    background-image: url(images/ui-icons_00a6dd_256x240.png);
+    background-image: url(images/ui-icons_888888_256x240.png);
 }
 .ui-state-hover .ui-icon, .ui-state-focus .ui-icon
 {
-    background-image: url(images/ui-icons_fafafa_256x240.png);
+    background-image: url(images/ui-icons_454545_256x240.png);
 }
 .ui-state-active .ui-icon
 {
-    background-image: url(images/ui-icons_00a6dd_256x240.png);
+    background-image: url(images/ui-icons_454545_256x240.png);
 }
 .ui-state-highlight .ui-icon
 {
-    background-image: url(images/ui-icons_304915_256x240.png);
+    background-image: url(images/ui-icons_2e83ff_256x240.png);
 }
 .ui-state-error .ui-icon, .ui-state-error-text .ui-icon
 {
-    background-image: url(images/ui-icons_ff8f8f_256x240.png);
+    background-image: url(images/ui-icons_cd0a0a_256x240.png);
 }
 
 /* positioning */
@@ -1002,75 +985,75 @@
 /* Corner radius */
 .ui-corner-tl
 {
-    -moz-border-radius-topleft: 4px;
-    -webkit-border-top-left-radius: 4px;
-    border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 2px;
+    -webkit-border-top-left-radius: 2px;
+    border-top-left-radius: 2px;
 }
 .ui-corner-tr
 {
-    -moz-border-radius-topright: 4px;
-    -webkit-border-top-right-radius: 4px;
-    border-top-right-radius: 4px;
+    -moz-border-radius-topright: 2px;
+    -webkit-border-top-right-radius: 2px;
+    border-top-right-radius: 2px;
 }
 .ui-corner-bl
 {
-    -moz-border-radius-bottomleft: 4px;
-    -webkit-border-bottom-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomleft: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    border-bottom-left-radius: 2px;
 }
 .ui-corner-br
 {
-    -moz-border-radius-bottomright: 4px;
-    -webkit-border-bottom-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    -moz-border-radius-bottomright: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 .ui-corner-top
 {
-    -moz-border-radius-topleft: 4px;
-    -webkit-border-top-left-radius: 4px;
-    border-top-left-radius: 4px;
-    -moz-border-radius-topright: 4px;
-    -webkit-border-top-right-radius: 4px;
-    border-top-right-radius: 4px;
+    -moz-border-radius-topleft: 2px;
+    -webkit-border-top-left-radius: 2px;
+    border-top-left-radius: 2px;
+    -moz-border-radius-topright: 2px;
+    -webkit-border-top-right-radius: 2px;
+    border-top-right-radius: 2px;
 }
 .ui-corner-bottom
 {
-    -moz-border-radius-bottomleft: 4px;
-    -webkit-border-bottom-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    -moz-border-radius-bottomright: 4px;
-    -webkit-border-bottom-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    -moz-border-radius-bottomleft: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    -moz-border-radius-bottomright: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 .ui-corner-right
 {
-    -moz-border-radius-topright: 4px;
-    -webkit-border-top-right-radius: 4px;
-    border-top-right-radius: 4px;
-    -moz-border-radius-bottomright: 4px;
-    -webkit-border-bottom-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    -moz-border-radius-topright: 2px;
+    -webkit-border-top-right-radius: 2px;
+    border-top-right-radius: 2px;
+    -moz-border-radius-bottomright: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 .ui-corner-left
 {
-    -moz-border-radius-topleft: 4px;
-    -webkit-border-top-left-radius: 4px;
-    border-top-left-radius: 4px;
-    -moz-border-radius-bottomleft: 4px;
-    -webkit-border-bottom-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    -moz-border-radius-topleft: 2px;
+    -webkit-border-top-left-radius: 2px;
+    border-top-left-radius: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    border-bottom-left-radius: 2px;
 }
 .ui-corner-all
 {
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
 }
 
 /* Overlays */
 .ui-widget-overlay
 {
-    background: #00a6dd url(images/ui-bg_diagonals-thick_50_00a6dd_40x40.png) 50% 50% repeat;
+    background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
     opacity: .30;
     filter: Alpha(Opacity=30);
 }
@@ -1086,9 +1069,9 @@
     border-radius: 8px;
 }
 /*
- * jQuery UI Resizable 1.8.7
+ * jQuery UI Resizable 1.8.11
  *
- * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
@@ -1174,9 +1157,9 @@
     top: -5px;
 }
 /*
- * jQuery UI Selectable 1.8.7
+ * jQuery UI Selectable 1.8.11
  *
- * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
@@ -1189,9 +1172,9 @@
     border: 1px dotted black;
 }
 /*
- * jQuery UI Accordion 1.8.7
+ * jQuery UI Accordion 1.8.11
  *
- * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
@@ -1220,7 +1203,6 @@
 .ui-accordion .ui-accordion-header a
 {
     display: block;
-    font-size: 1em;
     padding: .5em .5em .5em .7em;
 }
 .ui-accordion-icons .ui-accordion-header a
@@ -1251,9 +1233,9 @@
     display: block;
 }
 /*
- * jQuery UI Autocomplete 1.8.7
+ * jQuery UI Autocomplete 1.8.11
  *
- * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
@@ -1273,7 +1255,7 @@
 /* without this, the menu expands to 100% in IE6 */
 
 /*
- * jQuery UI Menu 1.8.7
+ * jQuery UI Menu 1.8.11
  *
  * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -1316,9 +1298,9 @@
     margin: -1px;
 }
 /*
- * jQuery UI Button 1.8.7
+ * jQuery UI Button 1.8.11
  *
- * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
@@ -1434,9 +1416,9 @@ button.ui-button::-moz-focus-inner
 }
 /* reset extra padding in Firefox */
 /*
- * jQuery UI Dialog 1.8.7
+ * jQuery UI Dialog 1.8.11
  *
- * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
@@ -1451,13 +1433,13 @@ button.ui-button::-moz-focus-inner
 }
 .ui-dialog .ui-dialog-titlebar
 {
-    padding: .5em 1em .3em;
+    padding: .4em 1em;
     position: relative;
 }
 .ui-dialog .ui-dialog-title
 {
     float: left;
-    margin: .1em 16px .2em 0;
+    margin: .1em 16px .1em 0;
 }
 .ui-dialog .ui-dialog-titlebar-close
 {
@@ -1516,9 +1498,9 @@ button.ui-button::-moz-focus-inner
     cursor: move;
 }
 /*
- * jQuery UI Slider 1.8.7
+ * jQuery UI Slider 1.8.11
  *
- * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
@@ -1595,9 +1577,9 @@ button.ui-button::-moz-focus-inner
     top: 0;
 }
 /*
- * jQuery UI Tabs 1.8.7
+ * jQuery UI Tabs 1.8.11
  *
- * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
@@ -1658,9 +1640,9 @@ button.ui-button::-moz-focus-inner
     display: none !important;
 }
 /*
- * jQuery UI Datepicker 1.8.7
+ * jQuery UI Datepicker 1.8.11
  *
- * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
@@ -1891,9 +1873,9 @@ button.ui-button::-moz-focus-inner
     height: 200px; /*must have*/
 }
 /*
- * jQuery UI Progressbar 1.8.7
+ * jQuery UI Progressbar 1.8.11
  *
- * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
@@ -1936,22 +1918,23 @@ button.ui-button::-moz-focus-inner
 .wijmo-wijinput, .wijmo-wijtextbox, .wijmo-wijgrid .wijmo-wijinput
 {
     /*background: #242122 url(images/ui-bg_inset-soft_15_242122_1x100.png) 50% 50% repeat-x !important;*/ /*background: #e1e1e1 url(images/ui-bg_inset-soft_100_e1e1e1_1x100.png) 50% 50% repeat-x !important;*/
-    background: #f1f1f1 !important;
+    background: #fafafa !important;
     color: #404040;
-    border: solid 1px #e1e1e1;
+    border: solid 1px #939aa3;
 }
-.wijmo-checkbox .wijmo-checkbox-box, div.wijmo-wijradio-box
+
+.wijmo-wijinput.ui-state-hover, .wijmo-wijtextbox.ui-state-hover
 {
-    background: #f1f1f1;
-    border: solid 1px #e1e1e1;
+    border-color: #333;
 }
 .wijmo-wijinput.ui-state-focus, .wijmo-wijtextbox.ui-state-focus
 {
     /*background: #e1e1e1 url(images/ui-bg_inset-soft_100_e1e1e1_1x100.png) 50% 50% repeat-x !important;*/
-    background: #fafafa !important;
+    background: #fff !important;
     color: #404040 !important;
+    border-color: #333;
 }
-
+/*
 .wijmo-checkbox .ui-state-hover, .wijmo-wijradio .ui-state-hover
 {
     -moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
@@ -1976,32 +1959,31 @@ button.ui-button::-moz-focus-inner
 }
 
 
+*/
 
-.wijmo-wijgrid .wijmo-wijgrid-table .wijmo-wijgrid-filter-input
+
+
+.wijmo-wijgrid-row
 {
-    background: #e1e1e1 url(images/ui-bg_inset-soft_100_e1e1e1_1x100.png) 50% 50% repeat-x !important;
-    color: #404040 !important;
+    border-color: #c7c8c9;
 }
-
-.wijmo-wijgrid-row .ui-state-highlight
-{
-    border-right: solid 1px transparent !important;
-}
-
 .wijmo-wijmenu .wijmo-wijmenu-list .wijmo-wijmenu-item
 {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-
+div.wijmo-wijgrid .wijmo-wijgrid-filterrow td
+{
+    border: none;
+}
 .wijmo-wijdropdown .wijmo-dropdown, .wijmo-wijmenu-child, .wijmo-wijcombobox-list, .wijmo-wijgrid-filterlist
 {
     -moz-box-shadow: 3px 3px 3px rgba(0,0,0,0.15);
     -webkit-box-shadow: 3px 3px 3px rgba(0,0,0,0.15);
     box-shadow: 3px 3px 3px rgba(0,0,0,0.15);
 }
-
+/*
 .wijmo-wijmenu-child .ui-state-default .wijmo-wijmenu-text, .wijmo-wijmenu-child a.wijmo-wijmenu-text
 {
     color: #404040;
@@ -2037,41 +2019,34 @@ button.ui-button::-moz-focus-inner
 .wijmo-wijmenu-child a:focus, .wijmo-wijmenu-child a:active
 {
     color: #fafafa !important;
-}
-
+}*/
+/*
 .ui-progressbar-value, .ui-slider-range
 {
     border: 1px solid #00a6dd;
-    background: #00a6dd url(images/ui-bg_highlight-soft_35_00a6dd_1x100.png) 50% 50% repeat-x;
+ background: #ffe475 url(images/ui-bg_inset-hard_100_ffe475_1x100.png) bottom repeat-x;
     font-weight: normal;
     color: #fafafa;
-}
+}*/
 
 .wijmo-wijsuperpanel-vbarcontainer, .wijmo-wijsuperpanel-hbarcontainer
 {
-    background: #888978;
+    background: #fcfcfc;
 }
 
 .wijmo-wijsuperpanel-vbarcontainer
 {
-    -moz-box-shadow: inset 3px 0 10px rgba(0,0,0,0.25);
-    -webkit-box-shadow: inset 3px 0 10px rgba(0,0,0,0.25);
-    box-shadow: inset 3px 0 10px rgba(0,0,0,0.25);
+    -moz-box-shadow: inset 3px 0 10px rgba(0,0,0,0.10);
+    -webkit-box-shadow: inset 3px 0 10px rgba(0,0,0,0.10);
+    box-shadow: inset 3px 0 10px rgba(0,0,0,0.10);
 }
 
 
 .wijmo-wijsuperpanel-hbarcontainer
 {
-    -moz-box-shadow: inset 0 3px 10px rgba(0,0,0,0.25);
-    -webkit-box-shadow: inset 0 3px 10px rgba(0,0,0,0.25);
-    box-shadow: inset 0 3px 10px rgba(0,0,0,0.25);
-}
-
-.wijmo-wijsuperpanel .wijmo-wijsuperpanel-handle
-{
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
-    border-radius: 0;
+    -moz-box-shadow: inset 0 3px 10px rgba(0,0,0,0.10);
+    -webkit-box-shadow: inset 0 3px 10px rgba(0,0,0,0.10);
+    box-shadow: inset 0 3px 10px rgba(0,0,0,0.10);
 }
 
 .wijmo-wijcalendar
@@ -2085,9 +2060,10 @@ button.ui-button::-moz-focus-inner
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    background: transparent url(images/ui-bg_highlight-soft_15_9eca38_1x100_50.png) 50% 50% repeat-x;
+    background: #fbf9ee;
     text-shadow: none;
-    color: inherit;
+    color: #404040;
+    border-right: solid 
 }
 
 
@@ -2102,122 +2078,101 @@ button.ui-button::-moz-focus-inner
     border-top: solid 1px #d3d3d3;
 }
 
-.wijmo-wijcalendar-table .wijmo-wijcalendar-day-selectable .ui-state-default
+.wijmo-wijcalendar-day-selectable .ui-state-default
 {
     background: none;
     border: solid 1px transparent;
     color: #404040;
 }
 
-.wijmo-wijcalendar-table .wijmo-wijcalendar-day-selectable .ui-state-highlight
+.wijmo-wijcalendar-day-selectable .ui-state-highlight
 {
-    background: #9eca38 url(images/ui-bg_highlight-soft_15_9eca38_1x100.png) 50% 50% repeat-x;
-    border: 1px solid #9eca38;
-    color: #304915;
-    -moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.25);
-    -webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.25);
-    box-shadow: inset 1px 1px 0 rgba(255,255,255,0.25);
-    text-shadow: 1px 1px 0 rgba(255,255,255,0.50);
+    border: 1px solid #fcefa1;
+    background: #fbf9ee url(images/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x;
+    color: #363636;
 }
 
 
 
-.wijmo-wijcalendar-table .wijmo-wijcalendar-day-selectable .ui-state-hover
+.wijmo-wijcalendar-day-selectable .ui-state-hover
 {
-    -moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
-    -webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
-    box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
-    border: 1px solid #00a6dd;
-    background: #00a6dd url(images/ui-bg_highlight-soft_35_00a6dd_1x100.png) 50% 50% repeat-x;
+    border: 1px solid #d3d3d3;
+    background: #dadada url(images/ui-bg_smooth_75_fafafa_1x400.png) top repeat-x;
     font-weight: normal;
-    color: #fafafa;
-    text-shadow: none;
+    color: #212121;
 }
+
 .wijmo-wijmenu .wijmo-wijmenu-separator
 {
-    border: 1px solid #00a6dd;
-    background: #00a6dd url(images/ui-bg_highlight-soft_35_00a6dd_1x100.png) 50% 50% repeat-x;
+    border: 1px solid #e6e6e6;
+     background: #e6e6e6 url(images/ui-bg_smooth_75_e6e6e6_1x400.png) top repeat-x;
 }
-
+/*
 .wijmo-wijmenu .wij-menu-breadcrumb a
 {
     color: #fafafa;
     line-height: 22px;
+}*/
+
+.wijmo-wijcalendar-day-selectable .ui-state-active
+{
+    border: 1px solid #999999;
+    background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) top repeat-x;
+    font-weight: normal;
+    color: #212121;
 }
 
-.wijmo-wijcalendar-table .wijmo-wijcalendar-day-selectable .ui-state-active
+.wijmo-wijcalendar-day-selectable .ui-priority-secondary
 {
-    -moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
-    -webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
-    box-shadow: inset 1px 1px 0 rgba(255,255,255,0.15);
-    border: 1px solid transparent;
-    background: #606154 url(images/ui-bg_highlight-soft_15_333333_1x100.png) top repeat-x;
-    font-weight: normal;
-    color: #fafafa;
-}
-
-.wijmo-wijcalendar-table .wijmo-wijcalendar-day-selectable .ui-priority-secondary
-{
-    -moz-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.05);
-    -webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.05);
-    box-shadow: inset 1px 1px 0 rgba(255,255,255,0.05);
-    border: 1px solid #404040;
-    background: #242122 url(images/ui-bg_highlight-soft_15_242122_1x100.png) 50% 50% repeat-x;
-    font-weight: normal;
-    color: #fafafa;
-    opacity: 0.25;
 }
 .wijmo-wijcombobox .wijmo-wijcombobox-input
 {
-    background: #f1f1f1;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
+    background: #fafafa;
     color: #404040;
 }
 
 .ui-expander-top .ui-expander-content
 {
-    border-top: solid 1px #E3E3E3 !important;
+    border-top: solid 1px #999999 !important;
 }
 
 .ui-expander-right .ui-expander-content
 {
-    border-top: solid 1px #E3E3E3 !important;
-    border-right: solid 1px #E3E3E3 !important;
-    border-bottom: solid 1px #E3E3E3 !important;
+    border-top: solid 1px #999999 !important;
+    border-right: solid 1px #999999 !important;
+    border-bottom: solid 1px #999999 !important;
     padding: 0 1em !important;
 }
 
 .ui-expander-left .ui-expander-content
 {
-    border-top: solid 1px #E3E3E3 !important;
-    border-left: solid 1px #E3E3E3 !important;
-    border-bottom: solid 1px #E3E3E3 !important;
+    border-top: solid 1px #999999 !important;
+    border-left: solid 1px #999999 !important;
+    border-bottom: solid 1px #999999 !important;
     padding: 0 1em !important;
 }
 
 .ui-accordion-top .ui-accordion-content
 {
-    border-top: solid 1px #E3E3E3 !important;
+    border-top: solid 1px #999999 !important;
 }
 
 .ui-accordion-right .ui-accordion-content
 {
-    border-top: solid 1px #E3E3E3 !important;
-    border-right: solid 1px #E3E3E3 !important;
-    border-bottom: solid 1px #E3E3E3 !important;
+    border-top: solid 1px #999999 !important;
+    border-right: solid 1px #999999 !important;
+    border-bottom: solid 1px #999999 !important;
     padding: 0 1em !important;
 }
 
 .ui-accordion-left .ui-accordion-content
 {
-    border-top: solid 1px #E3E3E3 !important;
-    border-left: solid 1px #E3E3E3 !important;
-    border-bottom: solid 1px #E3E3E3 !important;
+    border-top: solid 1px #999999 !important;
+    border-left: solid 1px #999999 !important;
+    border-bottom: solid 1px #999999 !important;
     padding: 0 1em !important;
 }
-
+/*
 
 .ui-tabs .ui-tabs-nav
 {
@@ -2229,18 +2184,12 @@ button.ui-button::-moz-focus-inner
     font-weight: normal;
     color: #fafafa;
 }
-
+*/
 .wijmo-wijgrid .wijmo-wijcombobox-wrapper .wijmo-wijcombobox-input
 {
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
-}
-
-
-.wijmo-wijgrid .wijmo-wijcombobox-trigger .ui-icon, .wijmo-wijgrid .wijmo-wijinput .ui-icon
-{
-    background-image: url(images/ui-icons_fafafa_256x240.png);
 }
 
 .wijmo-wijgrid .wijmo-wijcombobox-wrapper
@@ -2277,28 +2226,29 @@ button.ui-button::-moz-focus-inner
 
 .ui-datepicker-group-first .ui-datepicker-header
 {
-    -moz-border-radius-topleft: 4px;
-    -webkit-border-top-left-radius: 4px;
-    border-top-left-radius: 4px;
-    -moz-border-radius-bottomleft: 4px;
-    -webkit-border-bottom-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    -moz-border-radius-topleft: 2px;
+    -webkit-border-top-left-radius: 2px;
+    border-top-left-radius: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    border-bottom-left-radius: 2px;
 }
 
 .ui-datepicker-group-last .ui-datepicker-header
 {
-    -moz-border-radius-topright: 4px;
-    -webkit-border-top-right-radius: 4px;
-    border-top-right-radius: 4px;
-    -moz-border-radius-bottomright: 4px;
-    -webkit-border-bottom-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    -moz-border-radius-topright: 2px;
+    -webkit-border-top-right-radius: 2px;
+    border-top-right-radius: 2px;
+    -moz-border-radius-bottomright: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
-
+/*
 a.ui-button:link, a.ui-button
 {
     color: #fafafa;
 }
+*/
 
 .wijmo-wijwizard .wijmo-wijsuperpanel
 {
@@ -2321,41 +2271,80 @@ a.ui-button:link, a.ui-button
 {
     color: #404040;
 }
-/* Ribbon */
-.wijmo-wijribbon-group .wijmo-wijribbon-abbrevgroup:hover .wijmo-wijribbon-text
+
+div.ui-tabs ul.ui-tabs-nav li
 {
-    color: #fafafa;
+    border: solid 1px #939aa3;
 }
-div.wijmo-wijribbon .ui-icon
+
+
+.wijmo-wijdropdown .wijmo-dropdown .wijmo-dropdown-item.ui-state-hover, .wijmo-wijlist-ul .wijmo-wijlist-item.ui-state-hover, .wijmo-wijmenu-horizontal .wijmo-wijmenu-link.ui-state-hover, .wijmo-wijmenu .wijmo-wijmenu-link.ui-state-hover
+{
+    border: solid 1px #999999;
+}
+
+.wijmo-wijdropdown .wijmo-dropdown .wijmo-dropdown-item.ui-state-active, .wijmo-wijlist-ul .wijmo-wijlist-item.ui-state-active, .wijmo-wijmenu-horizontal .wijmo-wijmenu-link.ui-state-active, .ui-tabs .ui-tabs-nav li.ui-tabs-selected
+{
+    border: solid 1px #999999;
+}
+.wijmo-wijcalendar .ui-datepicker-header .ui-state-hover
+{
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.wijmo-wijcalendar .ui-datepicker-header .ui-state-default
+{
+    box-shadow: none;
+}
+
+.wijmo-wijcalendar-navbutton.ui-state-hover
+{
+    border: solid 1px #999;
+}
+.wijmo-wijgrid .wijmo-wijgrid-headerrow .wijmo-c1basefield.ui-state-active
+{
+    border-bottom: none;
+    padding-bottom: 1px;
+}
+.wijmo-wijgrid .wijmo-wijgrid-current-cell
+{
+    background: #fff9d9;
+}
+div.wijmo-wijribbon .ui-icon, .wijmo-wijribbon-abbrevicon, div.wijmo-wijribbon-simple span.ui-icon, .wijmo-wijribbon .wijmo-wijribbon-group .ui-button:hover .ui-icon, div.wijmo-wijribbon-modes span.ui-icon, .wijmo-wijribbon-group .wijmo-wijribbon-abbrevgroup:hover .ui-icon, .wijmo-wijribbon-group .wijmo-wijribbon-abbrevgroup:hover .wijmo-wijribbon-abbrevicon
 {
     background-image: url("images/wijmo-ui-icons_000000_240x112.png");
 }
-div.wijmo-wijribbon-simple span.ui-icon, div.wijmo-wijribbon .ui-state-active .ui-icon, .wijmo-wijribbon .wijmo-wijribbon-group .ui-button:hover .ui-icon, div.wijmo-wijribbon-modes span.ui-icon, .wijmo-wijribbon-group .wijmo-wijribbon-abbrevgroup:hover .ui-icon, .wijmo-wijribbon-group .wijmo-wijribbon-abbrevgroup:hover .wijmo-wijribbon-abbrevicon
+.wijmo-wijeditor .wijmo-wijribbon li.wijmo-wijribbon-breaks
 {
-    background-image: url("images/wijmo-ui-icons_ffffff_240x112.png");
+    width: 7em;
 }
-.wijmo-wijeditor .ui-tabs .ui-tabs-nav li.ui-tabs-selected
+.wijmo-wijeditor .wijmo-wijribbon li.wijmo-wijribbon-actions
 {
-    padding-bottom: 0;
+    width: 17em;
 }
-div.wijmo-wijribbon-simple .ui-button-text-icon-secondary .ui-button-text
+.wijmo-wijeditor .wijmo-wijribbon li.wijmo-wijribbon-tables
 {
-    color: #fafafa;
+    width: 20em;
+}
+.wijmo-wijeditor .wijmo-wijribbon li.wijmo-wijribbon-special
+{
+    width: 11em;
+}
+.wijmo-wijeditor .wijmo-wijribbon .wijmo-wijribbon-groups .wijmo-wijribbon-reviewwithspelling
+{
+    width: 13em;
+}
+.wijmo-wijeditor .wijmo-wijribbon li.wijmo-wijribbon-forms
+{
+    width: 21em;
 }
 
-
-div.wijmo-wijribbon .ui-state-active .ui-button-text
+.wijmo-wijeditor .wijmo-wijribbon-review .ui-button
 {
-    border: solid 1px transparent;
-    border-radius: 4px;
+    width: 71px;
 }
-
-.wijmo-wijev-event-dialog .wijmo-wijinput-input, 
-.wijmo-wijev-event-dialog .wijmo-wijtextbox
+.wijmo-wijribbon-font .wijmo-wijribbon-list .ui-button
 {
-    color: #404040;
-}
-/* Grid highlight row icon fix */
-.wijmo-wijgrid .ui-state-highlight .ui-state-active .ui-icon {
-    background-image: url("images/ui-icons_00a6dd_256x240.png");
+    width: 30px;
 }

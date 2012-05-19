@@ -1,6 +1,6 @@
 - to = @message.to
 - from = @message.from
-- sendmsg ["/#{to}"] do
+- sendmsg current_user.id, ["/#{to}"] do
   :plain
     if(document.getElementById("dialog-#{from}")) {
       $("#dialog-#{from}").wijdialog('open');

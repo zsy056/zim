@@ -1,0 +1,6 @@
+- for rcontact in @rcontacts
+  - to = rcontact.owner.id
+  - sendmsg current_user.id, ["/#{to}"] do
+    :plain
+      $("#online-status-#{@my_id}").html("#{@online_msg}");
+
