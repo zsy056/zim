@@ -1,0 +1,4 @@
+Counter Hacker Reloaded
+Understanding the Linux kernel
+Effective Java
+Core Java

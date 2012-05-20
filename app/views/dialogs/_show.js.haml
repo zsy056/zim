@@ -33,7 +33,9 @@
           themeType : 'simple',
           items : [
             'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-            'removeformat', '|', 'code', 'insertfile', '|', 'emoticons', 'image', 'link']
+            'removeformat', '|', 'code', 'insertfile', '|', 'emoticons', 'image', 'link'],
+          uploadJson: '/kindeditor/upload',
+          fileManagerJson: '/kindeditor/filemanager'
         });
         editor_#{@dialog_id}.focus();
         //$("#chat-content-#{@dialog_id}").wijsuperpanel();
