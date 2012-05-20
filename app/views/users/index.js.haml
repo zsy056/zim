@@ -1,0 +1,16 @@
+:plain
+  $('#ext_dialog').wijdialog({
+    width: 840, 
+    height: 640, 
+    contentUrl: '#{users_path}', 
+    autoOpen: true,
+    title: 'All Users',
+    dialogClass: "dialogWithDropShadow",
+    show: 'puff',
+    hide: 'explode',
+    collapsingAnimation: 
+      { animated: "puff", duration: 300, easing: "easeOutExpo" },
+    expandingAnimation: 
+      { animated: "highlight", duration: 300, easing: "easeOutExpo" },
+    modal: true,
+  });

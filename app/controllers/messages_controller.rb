@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
           format.js { render :partial => 'offline_msg' }
         end
       else
-        @sys_msg = 'Offline message failed.'
+        @sys_msg = 'Sending message failed.'
         format.js { render :partial => 'offline_msg'}
       end
     end

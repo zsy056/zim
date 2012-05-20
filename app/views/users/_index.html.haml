@@ -1,0 +1,8 @@
+= render 'layouts/stylesheets'
+= javascript_include_tag 'application'
+- provide :title, 'All users'
+= will_paginate
+%ul{ :class => "users" }
+  - @users.each do |user|
+    = render user
+= will_paginate

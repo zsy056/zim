@@ -1,8 +1,7 @@
-.chat-dialog{ :id => "dialog-#{@dialog_id}", :title => "#{@contact_name}", :style => "width:300px; height:200px;" }
-  .chat-content{ :id => "chat-content-#{@dialog_id}" }
+.chat-dialog{ :id => "dialog-#{@dialog_id}", :title => "#{@contact_name}", :style => "overflow-y: hidden;" }
+  .chat-content{ :id => "chat-content-#{@dialog_id}", :style => "height: 65%; width: 100%;" }
   .input-sec
-    = form_for Message.new, :remote => true, :html => { :id => "chat-#{@dialog_id}",
-     :style => "padding: 0; margin: 0 0 0 -18px;" } do |f|
-      = f.kindeditor :content
-      //= f.text_area :content, :class => 'chat-input', :rows => 3, :autofocus => true, :required => true, :id => "chat-input-#{@dialog_id}", :html => { :style => 'width:300px; height:200px;' }
+    = form_for Message.new, :remote => true, :html => { :id => "chat-#{@dialog_id}" } do |f|
+      //= f.kindeditor :content
+      = f.text_area :content, :class => 'chat-input', :rows => 3, :required => true, :id => "chat-input-#{@dialog_id}", :style => 'height: 150px; width:100%;'
       = f.hidden_field :to, :value => @dialog_id

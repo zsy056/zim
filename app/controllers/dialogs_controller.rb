@@ -5,7 +5,7 @@ class DialogsController < ApplicationController
     @dialog_id = params[:id]
     @contact_name = User.find_by_id(@dialog_id).name
     respond_to do |format|
-      format.js
+      format.js { render :partial => 'show' }
     end
   end
 end

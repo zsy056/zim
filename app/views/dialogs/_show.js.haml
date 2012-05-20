@@ -1,0 +1,59 @@
+:plain
+  if(document.getElementById("dialog-#{@dialog_id}")) {
+    $("#dialog-#{@dialog_id}").wijdialog("open");
+  } else {
+    var editor_#{@dialog_id};
+    $("#dialogs").append("#{escape_javascript(render(:partial => 'dialogs/msg_dialog'))}");
+    
+    $("#dialog-#{@dialog_id}").wijdialog({
+      autoOpen: true,
+      hide: 'explode',
+      collapsingAnimation: 
+        { animated: "puff", duration: 300, easing: "easeOutExpo" },
+      expandingAnimation: 
+        { animated: "highlight", duration: 300, easing: "easeOutExpo" },
+      width: 490,
+      height: 500,
+      buttons: {
+        "Clear": function () {
+          $("#chat-input-#{@dialog_id}").val('');
+          editor_#{@dialog_id}.html('');
+        },
+        "Send": function () {
+          $("#chat-input-#{@dialog_id}").val(editor_#{@dialog_id}.html());
+          $("#chat-#{@dialog_id}").submit();
+          editor_#{@dialog_id}.html('');
+        }
+      },
+      dialogClass: "dialogWithDropShadow",
+      open: function(e){
+        //$("#dialog-#{@dialog_id}").wijsplitter({ orientation: "horizontal", splitterDistance: 250 });
+        editor_#{@dialog_id} = KindEditor.create('textarea[id="chat-input-#{@dialog_id}"]', {
+          resizeType: 0,
+          themeType : 'simple',
+          items : [
+            'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+            'removeformat', '|', 'code', 'insertfile', '|', 'emoticons', 'image', 'link']
+        });
+        editor_#{@dialog_id}.focus();
+        //$("#chat-content-#{@dialog_id}").wijsuperpanel();
+      },
+      beforeClose: function(e){
+        if(editor_#{@dialog_id}){
+          editor_#{@dialog_id}.remove();
+        }
+      },
+      resize: function(e, data){
+        $("#chat-content-#{@dialog_id}").height(data.size.height-250);
+      },
+      captionButtons: {
+                toggle: { visible: false },
+      },
+      focus: function(e) {
+        if(editor_#{@dialog_id}) {
+          editor_#{@dialog_id}.focus();
+        }
+      }
+    });
+  }
+    
