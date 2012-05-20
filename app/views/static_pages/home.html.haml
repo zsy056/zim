@@ -28,7 +28,7 @@
       %h1 Zim
       %p An Web IM
       - if !signed_in?
-        = link_to 'Sign Up', signup_path
+        = link_to 'Sign Up', signup_path, :remote => true
       - else
         Hello,
         = current_user.name

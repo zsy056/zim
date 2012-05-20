@@ -1,0 +1,28 @@
+- if signed_in?
+  location.reload();
+  $('#signup-dialog').wijdialog('close');
+-else
+  :plain
+    if(document.getElementById('signup-dialog')) {
+      $('#signup-dialog').wijdialog('open');
+    } else { 
+      $('#dialogs').append("#{escape_javascript(render(:partial => 'signup_form'))}");
+      $('#signup-dialog').wijdialog({
+        autoOpen: true,
+        modal: true,
+        buttons: {
+          'Clear': function() {
+            document.getElementById('signup-form').reset();
+          },
+          'Sign up': function() {
+            $('#signup-form').submit();
+          }
+        },
+        dialogClass: 'dialogWithDropShadow',
+        hide: 'explode',
+        collapsingAnimation: { 
+          animated: "puff", duration: 300, easing: "easeOutExpo" },
+        expandingAnimation: { 
+          animated: "highlight", duration: 300, easing: "easeOutExpo" }
+      });  
+    }

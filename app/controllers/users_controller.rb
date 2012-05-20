@@ -16,6 +16,9 @@ class UsersController < ApplicationController
   def new
     @title = 'Sign up'
     @user = User.new
+    respond_to do |format|
+      format.js { render :partial => 'new' }
+    end
   end
 
   def show
@@ -24,12 +27,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if @user.save
-      sign_in @user
-      flash[:success] = "Welcome to the Zim!"
-      redirect_to @user
-    else
-      render 'new'
+    respond_to do |format|
+      if @user.save
+        sign_in @user
+        format.js { render :partial => 'signup_ok' }
+      else
+        @error_msg = 'Sign up failed!';
+        format.js { render :partial => 'alert' }
+      end
     end
   end
 
