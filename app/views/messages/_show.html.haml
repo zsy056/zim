@@ -1,6 +1,6 @@
 %li
   = current_user.name
-  %span{ :class => 'msg-time' }= Time.now
+  %span{ :class => 'msg-time' }= @message.created_at
   \:
   %br
   = raw @message.content

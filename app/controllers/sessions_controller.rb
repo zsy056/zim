@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
     Net::HTTP.post_form(uri, :message => message.to_json)
     @online_msg = 'online'
     @rcontacts = Contact.find_all_by_contact_id(@my_id)
+    @online = true
     respond_to do |format|
       format.js { render :partial => 'update_online' }
     end

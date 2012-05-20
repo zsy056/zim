@@ -1,1 +1,14 @@
-{ 'data': 'server alive' };
+- get_offline_msgs
+- for msg in @offline_msgs 
+  - to = current_user.id
+  - @dialog_id = from
+  - from = msg.from
+  - @contact_name = User.find_by_id(from).name
+  - sendmsg from, ["/#{to}"] do
+    = render 'dialogs/show'
+    :plain
+      $("#chat-content-#{from}").append("#{escape_javascript render(:partial => 'show')}");
+      document.getElementById("chat-content-#{from}").scrollTop=10000;
+  - msg.is_sent = true
+  - msg.save
+

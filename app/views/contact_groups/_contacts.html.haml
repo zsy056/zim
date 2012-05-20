@@ -18,6 +18,9 @@
                   = online_status(tid)
 :javascript
     $(function() {
-      $("#contacts").wijtree();
+      $("#contacts").wijtree({
+        allowDrag: true,
+
+      });
       document.getElementById("contacts-div").style.height=window.screen.height-160+"px";   
   });

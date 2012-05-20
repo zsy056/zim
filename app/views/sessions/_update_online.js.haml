@@ -1,3 +1,18 @@
+- if @online
+  - @offline_msgs = get_offline_msgs
+  - to = current_user.id
+  - for msg in @offline_msgs 
+    - from = msg.from
+    - @dialog_id = from
+    - @contact_name = User.find_by_id(from).name
+    - @message = msg
+    - sendmsg from, ["/#{to}"] do
+      = render 'dialogs/show'
+      :plain
+        $("#chat-content-#{from}").append("#{escape_javascript render(:partial => 'messages/show')}");
+        document.getElementById("chat-content-#{from}").scrollTop=10000;
+    - msg.is_sent = true
+    - msg.save
 - for rcontact in @rcontacts
   - to = rcontact.owner.id
   - if $redis.get to != nil
