@@ -2,8 +2,8 @@
 = javascript_include_tag 'application'
 = csrf_meta_tag
 = will_paginate
-%ul{ :class => "users" }
-  - @users.each do |user|
-    = render user
+%ul{ :class => 'users' }
+  - @contacts.each do |contact|
+    = render contact
 = will_paginate
 %div{ :id => 'dialogs' }

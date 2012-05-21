@@ -2,5 +2,6 @@
   = gravatar_for user, size: 30
   = link_to user.name, user, :remote => true
   - if current_user.admin? && !current_user?(user)
-    = link_to "delete", user, method: :delete, confirm: 'You sure?'
+    %br
+    = link_to "delete", user, :remote => true, method: :delete, confirm: 'You sure?'
 

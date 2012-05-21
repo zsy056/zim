@@ -1,0 +1,5 @@
+%li
+  = gravatar_for contact.contact, size: 30
+  = link_to contact.contact.name, contact.contact, :remote => true
+  %br
+  = link_to "delete", contact, :remote => true, method: :delete, confirm: 'You sure?'

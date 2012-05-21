@@ -7,9 +7,11 @@ class ContactsController < ApplicationController
   end
 
   def destroy
-    @user = Contact.find(params[:id]).followed
-    current_user.rm_contact!(@user)
-    redirect_to(@use)
+    current_user.rm_contact! Contact.find(params[:id]).contact 
+    respond_to do |format|
+      @msg = 'Delete success!'
+      format.js { render :partial => 'alert' }
+    end
   end
   
   def show
@@ -17,7 +19,11 @@ class ContactsController < ApplicationController
   end
   
   def index
-    
+    @contacts = current_user.contacts.paginate(page: params[:page], per_page: 6)
+    respond_to do |format|
+      format.js
+      format.html { render :partial => 'index' }
+    end
   end
 
 end
