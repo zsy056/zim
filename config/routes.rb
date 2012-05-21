@@ -2,6 +2,7 @@ Zim::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :contact_groups, only: [:index]
+  resources :contacts
   resources :dialogs, only: [:show]
   resources :messages, only: [:new, :create, :show]
   
@@ -16,7 +17,6 @@ Zim::Application.routes.draw do
   match '/signup', to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
-  match '/contacts', to: 'contact_groups#index'
   match '/beat', to: 'sessions#beat'
   match '/leave', to: 'sessions#leave'
   #match '/dialogs/:dialog_id', to: 'dialogs#show', via: :show

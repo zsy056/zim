@@ -1,0 +1,23 @@
+:plain
+  if(document.getElementById('user-dialog-#{@user.id}')) {
+    $('#user-dialog-#{@user.id}').wijdialog('open');
+  } else { 
+    $('#dialogs').append("#{escape_javascript(render(:partial => 'user_content'))}");
+    $('#user-dialog-#{@user.id}').wijdialog({
+        autoOpen: true,
+        modal: true,
+        buttons: {
+          'OK': function() {
+            $('#user-dialog-#{@user.id}').wijdialog('close');
+          }
+        },
+        width: 400,
+        dialogClass: 'dialogWithDropShadow',
+        hide: 'explode',
+        collapsingAnimation: { 
+          animated: "puff", duration: 300, easing: "easeOutExpo" },
+        expandingAnimation: { 
+          animated: "highlight", duration: 300, easing: "easeOutExpo" },
+        title: 'User Information',
+      });  
+  }

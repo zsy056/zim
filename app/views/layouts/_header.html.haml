@@ -13,11 +13,25 @@
                 Account
                 %b{ :class => "caret" }
               %ul{ :class => "dropdown-menu" }
-                %li= link_to "Profile", current_user
-                %li= link_to "Settings", edit_user_path(current_user)
+                %li
+                  %a{ :onclick => "off_line();", :href => '#', :id => 'status-tog' }
+                    Get off line
+                %li= link_to "Profile", current_user, :remote => true
+                %li= link_to "Settings", edit_user_path(current_user), :remote => true
                 %li{ :class => "divider" }
                 %li= link_to "Sign out", signout_path, method: "delete"
           - else
             %li= link_to "Sign in", signin_path, :remote => true, :id => "signin_nav"
           %form{ :class => "navbar-search pull-left" }
             %input{ :type => "text", :class => "search-query", :placeholder => "Search" }/
+- if signed_in?
+  :javascript
+    function on_line(){
+      $('#heart-beat-form').submit();
+      $('#status-tog').replaceWith("<a href='#' onclick='off_line()' id='status-tog'>Get off line</a>"); 
+    }
+
+    function off_line(){
+      $('#leave-form').submit();
+      $('#status-tog').replaceWith("<a href='#' onclick='on_line()' id='status-tog'>Get on line</a>"); 
+    }
