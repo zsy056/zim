@@ -4,9 +4,12 @@ class UsersController < ApplicationController
   before_filter :admin_user,     only: :destroy
   
   include UsersHelper
+  require 'will_paginate/array'
   
   def index
-    @users = User.paginate(page: params[:page], per_page: 6)
+    qemail = params[:qemail] ? '%'+params[:qemail]+'%' : '%'
+    qname = params[:qname] ? '%'+params[:qname]+'%' : '%'
+    @users = User.where('email like ? AND name like ?', qemail, qname).paginate(page: params[:page], per_page: 10)
     respond_to do |format|
       format.js
       format.html { render :partial => 'index' }

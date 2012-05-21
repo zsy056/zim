@@ -7,7 +7,7 @@
     = javascript_include_tag "http://localhost:9292/im.js"
     = javascript_include_tag 'application'
     = csrf_meta_tag
-  %body
+  %body{ :style => 'overflow: hidden;' }
     = render 'layouts/header'
     %div
       %div{ :id => "container" }

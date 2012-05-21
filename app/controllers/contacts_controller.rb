@@ -19,7 +19,7 @@ class ContactsController < ApplicationController
   end
   
   def index
-    @contacts = current_user.contacts.paginate(page: params[:page], per_page: 6)
+    @contacts = current_user.contacts.paginate(page: params[:page], per_page: 10)
     respond_to do |format|
       format.js
       format.html { render :partial => 'index' }
