@@ -9,6 +9,7 @@
           - if signed_in?
             %li= link_to "Users", users_path, :remote => true
             %li= link_to 'Contacts', contacts_path, :remote => true
+            %li= link_to 'Cycles', contact_groups_path, :remote => true
             %li{ :id => "fat-menu", :class =>"dropdown" }
               %a{ :href => "#", :class => "dropdown-toggle", "data-toggle" => "dropdown" } 
                 Account
@@ -23,8 +24,8 @@
                 %li= link_to "Sign out", signout_path, method: "delete"
           - else
             %li= link_to "Sign in", signin_path, :remote => true, :id => "signin_nav"
-          %form{ :class => "navbar-search pull-left" }
-            %input{ :type => "text", :class => "search-query", :placeholder => "Search" }/
+          //%form{ :class => "navbar-search pull-left" }
+          //  %input{ :type => "text", :class => "search-query", :placeholder => "Search" }/
 - if signed_in?
   :javascript
     function on_line(){

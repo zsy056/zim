@@ -1,0 +1,15 @@
+= render 'layouts/stylesheets'
+= javascript_include_tag 'application'
+= csrf_meta_tag
+- if @contact_groups.size == 0
+  %h2
+    No Record!
+= link_to 'New Group', new_contact_group_path, :remote => true
+%hr
+= will_paginate
+%ul{ :class => 'contact-groups' }
+  - @contact_groups.each do |contact_group|
+    = render contact_group
+    %hr
+= will_paginate
+%div{ :id => 'dialogs' }

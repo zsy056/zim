@@ -19,6 +19,7 @@ Zim::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/beat', to: 'sessions#beat'
   match '/leave', to: 'sessions#leave'
+  match '/contact_bar', to: 'contact_groups#list'
   #match '/dialogs/:dialog_id', to: 'dialogs#show', via: :show
   #match '/msg/send', to: 'messages#create'
   

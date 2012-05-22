@@ -1,0 +1,5 @@
+%li
+  %h3= contact_group.group_name
+  = link_to 'Delete', contact_group, :remote => true, method: :delete, confirm: 'You sure?'
+  |
+  = link_to 'Edit', edit_contact_group_path(contact_group), :remote => true

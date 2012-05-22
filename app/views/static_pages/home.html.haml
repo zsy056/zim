@@ -6,7 +6,7 @@
     %div{ :id => "contacts-div" }
     :javascript
       $(function() {
-        $("#contacts-div").load("#{contact_groups_path}");
+        $("#contacts-div").load("#{contact_bar_path}");
         var faye = new Faye.Client('http://localhost:9292/im');
         faye.subscribe('/broadcast', function (data) {
           alert(data);

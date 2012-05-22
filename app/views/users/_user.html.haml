@@ -3,12 +3,12 @@
   = link_to current_user.get_display_name(user), user, :remote => true
   - if current_user.admin? && !current_user?(user)
     %br
-    = link_to "Delete User", user, :remote => true, method: :delete, confirm: 'You sure?'
+    = link_to "Delete", user, :remote => true, method: :delete, confirm: 'You sure?'
   %br
   - if current_user.is_contact? user
     - contact = current_user.contacts.find_by_contact_id(user.id)
     = link_to 'Delete Contact', contact, :remote => true, method: :delete, confirm: 'You sure?'
     %br
-    = link_to 'Edit Contact', edit_contact_path(contact), :remote => true
+    = link_to 'Edit', edit_contact_path(contact), :remote => true
   - elsif user.id != current_user.id
     = link_to 'Add Contact', new_contact_path+"?id=#{user.id}", :remote => true

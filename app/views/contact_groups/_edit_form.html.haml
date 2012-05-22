@@ -1,0 +1,6 @@
+%div{ :id => "ecgrp-dialog-#{@contact_group.id}" }
+  = form_for @contact_group, :remote => true, :html => { :id => "ecgrp-form-#{@contact_group.id}" } do |f|
+    .field
+      = f.label :group_name
+      %br
+      = f.text_field :group_name

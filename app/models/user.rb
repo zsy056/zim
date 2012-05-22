@@ -67,12 +67,18 @@ class User < ActiveRecord::Base
     contact_groups.find_by_group_name(q_group_name)
   end
   
-  def add_contact_group!(new_group_name)
-    contact_groups.create!(group_name: new_group_name)
+  def add_contact_group!(params)
+    contact_groups.create!(group_name: params[:group_name])
   end
   
-  def rm_contact_group!(group_name_to_rm)
-    contact_groups.find_by_group_name(group_name_to_rm).destory
+  def rm_contact_group!(groupid)
+    group = contact_groups.find(groupid)
+    contacts_in_grp = contacts.find_all_by_contact_group(group.id)
+    contacts_in_grp.each do |contact|
+      contact.contact_group = -1 
+      contact.save
+    end
+    group.destroy
   end
   
   def set_admin!
