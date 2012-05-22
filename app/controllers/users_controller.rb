@@ -38,8 +38,8 @@ class UsersController < ApplicationController
         sign_in @user
         format.js { render :partial => 'signup_ok' }
       else
-        @error_msg = 'Sign up failed!';
-        format.js { render :partial => 'alert' }
+        @msg = 'Sign up failed!';
+        format.js { render :partial => 'shared/alert' }
       end
     end
   end
@@ -59,8 +59,8 @@ class UsersController < ApplicationController
         sign_in @user
         format.js { render :partial => 'update_ok' }
       else
-        @error_msg = 'Settings update failed!'
-        format.js { render :partial => 'alert' }
+        @msg = 'Settings update failed!'
+        format.js { render :partial => 'shared/alert' }
       end
     end
   end

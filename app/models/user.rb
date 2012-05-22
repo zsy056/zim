@@ -33,9 +33,28 @@ class User < ActiveRecord::Base
     contacts.find_by_contact_id(other_user.id)
   end
 
-  def add_contact!(other_user, group_name_to_add, new_contact_alias)
-    group = contact_groups.find_by_group_name(group_name_to_add)
-    group_id = group ? group.id : -1;
+  def get_display_name(other_user)
+    display_name = nil
+    if is_contact? other_user
+      contact = contacts.find_by_contact_id(other_user.id)
+      if contact.contact_alias
+        display_name = contact.contact_alias + " (#{other_user.name})"
+      end
+    end
+    display_name ||= other_user.name
+  end
+
+  def get_display_name_by_id(id)
+    display_name = nil
+    contact = contacts.find_by_contact_id(id)
+    name = User.find(id).name
+    if contact and contact.contact_alias
+      display_name = contact.contact_alias + " (#{name})"
+    end
+    display_name ||= name
+  end
+
+  def add_contact!(other_user, group_id, new_contact_alias)
     contacts.create!(contact_id: other_user.id, contact_group: group_id, contact_alias: new_contact_alias)
   end
 

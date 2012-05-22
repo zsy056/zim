@@ -1,4 +1,4 @@
-.chat-dialog{ :id => "dialog-#{@dialog_id}", :title => "#{@contact_name}", :style => "overflow-y: hidden;" }
+.chat-dialog{ :id => "dialog-#{@dialog_id}", :title => "#{current_user.get_display_name_by_id(@dialog_id)}", :style => "overflow-y: hidden;" }
   .chat-content{ :id => "chat-content-#{@dialog_id}", :style => "height: 65%; width: 100%;" }
   .input-sec
     = form_for Message.new, :remote => true, :html => { :id => "chat-#{@dialog_id}" } do |f|

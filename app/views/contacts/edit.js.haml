@@ -1,0 +1,25 @@
+:plain
+  if(document.getElementById('econtact-dialog-#{@contact.id}')) {
+    $('#econtact-dialog-#{@contact.id}').wijdialog('open');
+  } else { 
+    $('#dialogs').append("#{escape_javascript(render(:partial => 'edit_form'))}");
+    $('#econtact-dialog-#{@contact.id}').wijdialog({
+      autoOpen: true,
+      modal: true,
+      buttons: {
+        'Clear': function() {
+          document.getElementById('econtact-form-#{@contact.id}').reset();
+        },
+        'Update': function() {
+          $('#econtact-form-#{@contact.id}').submit();
+        }
+      },
+      dialogClass: 'dialogWithDropShadow',
+      hide: 'explode',
+      collapsingAnimation: { 
+        animated: "puff", duration: 300, easing: "easeOutExpo" },
+      expandingAnimation: { 
+        animated: "highlight", duration: 300, easing: "easeOutExpo" },
+      title: 'Settings',
+    });  
+  }

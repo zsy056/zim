@@ -1,9 +1,16 @@
 = render 'layouts/stylesheets'
 = javascript_include_tag 'application'
 = csrf_meta_tag
+= form_tag contacts_path, :method => 'get' do
+  .field
+    Email
+    = text_field_tag 'qemail', params[:qemail], :placeholder => 'Enter search email...'
+    Name
+    = text_field_tag 'qname', params[:qname], :placeholder => 'Enter search name...'
+    = submit_tag 'Search'
 = will_paginate
 %ul{ :class => 'users' }
-  - @contacts.each do |contact|
-    = render contact
+  - @contacts.each do |contact_user|
+    = render contact_user
 = will_paginate
 %div{ :id => 'dialogs' }

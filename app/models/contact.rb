@@ -12,7 +12,7 @@
 #
 
 class Contact < ActiveRecord::Base
-  attr_accessible :contact_id
+  attr_accessible :contact_id, :contact_alias, :contact_group
   
   belongs_to :owner, class_name: "User"
   belongs_to :contact, class_name: "User"

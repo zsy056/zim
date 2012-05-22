@@ -1,6 +1,3 @@
-:css
-  .chat-content { width: 320px; height: 300px; overflow-y: auto; }
-  .chat-input   { margin: 0; }
 %ul{ :id => "contacts" }
   - for group_name, contacts in @groups
     %li 
@@ -13,7 +10,11 @@
             = link_to(dialog_path(tid), :remote => true) do 
               %span  
                 %img{ :src => "#{gravatar(contact.contact, :size => 28)}" }
-                = contact.contact.name
+                - if contact.contact_alias != nil
+                  = contact.contact_alias
+                  (#{contact.contact.name})
+                - else
+                  = contact.contact.name
                 %div{ :id => "online-status-#{tid}" }
                   = online_status(tid)
 :javascript

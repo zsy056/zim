@@ -1,7 +1,7 @@
 = render 'layouts/stylesheets'
 = javascript_include_tag 'application'
 = csrf_meta_tag
-= form_tag '/users', :method => 'get' do
+= form_tag users_path, :method => 'get' do
   .field
     Email
     = text_field_tag 'qemail', params[:qemail], :placeholder => 'Enter search email...'

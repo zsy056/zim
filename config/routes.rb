@@ -1,7 +1,7 @@
 Zim::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :contact_groups, only: [:index]
+  resources :contact_groups
   resources :contacts
   resources :dialogs, only: [:show]
   resources :messages, only: [:new, :create, :show]

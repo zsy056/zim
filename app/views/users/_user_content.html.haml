@@ -4,4 +4,4 @@
       %section
         %h1
           = gravatar_for @user
-          = @user.name
+          = current_user.get_display_name @user

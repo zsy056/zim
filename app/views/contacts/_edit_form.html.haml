@@ -1,0 +1,14 @@
+%div{ :id => "econtact-dialog-#{@contact.id}" }
+  = form_for @contact, :remote => true, :html => { :id => "econtact-form-#{@contact.id}" } do |f| 
+    .field
+      = f.label :contact_alias, 'Contact Alias'
+      %br
+      = f.text_field :contact_alias, :value => @contact.contact_alias
+    .field
+      = f.label :contact_group, 'Contact Group'
+      %br
+      - grp_info = @groups.map { |u| [u.group_name, u.id] }
+      - grp_info.push(['Default', -1])
+      = select :contact, :contact_group, grp_info
+    %br
+    = link_to 'New Group', new_contact_group_path, :remote => true

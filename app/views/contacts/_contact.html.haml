@@ -1,5 +1,11 @@
 %li
-  = gravatar_for contact.contact, size: 30
-  = link_to contact.contact.name, contact.contact, :remote => true
+  - contact = current_user.contacts.find_by_contact_id(contact_user.id)
+  = gravatar_for contact_user, size: 30
+  - if contact.contact_alias != nil
+    - display_name = contact.contact_alias + "(#{contact_user.name})"
+  - else
+    //- display_name = contact_user.name
+    - display_name = contact.contact_alias + "(#{contact_user.name})"
+  = link_to display_name, contact_user, :remote => true
   %br
-  = link_to "delete", contact, :remote => true, method: :delete, confirm: 'You sure?'
+  = link_to "Delete Contact", contact_user, :remote => true, method: :delete, confirm: 'You sure?'

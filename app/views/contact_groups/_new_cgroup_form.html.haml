@@ -1,0 +1,6 @@
+%div{ :id => 'new-cgroup-dialog' }
+  = form_for @contact_group, :remote => true, :html => { :id => 'new-cgroup-form' } do |f|
+    .field
+      = f.label :group_name
+      %br
+      = f.text_field :group_name, :required => true
