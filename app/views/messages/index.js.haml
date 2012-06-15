@@ -1,0 +1,16 @@
+:plain
+  $('#dialogs').wijdialog({
+    width: 700, 
+    height: 500, 
+    contentUrl: '#{messages_path}?contact=#{params[:contact]}&page=1', 
+    autoOpen: true,
+    title: 'Message Records',
+    dialogClass: "dialogWithDropShadow",
+    show: 'puff',
+    hide: 'explode',
+    collapsingAnimation: 
+      { animated: "puff", duration: 300, easing: "easeOutExpo" },
+    expandingAnimation: 
+      { animated: "highlight", duration: 300, easing: "easeOutExpo" },
+    modal: true,
+  });

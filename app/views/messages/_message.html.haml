@@ -1,0 +1,7 @@
+%li
+  %span{ :class => 'msg-name'}= message.from_user.name
+  \:
+  %span{ :class => 'msg-time' }= message.created_at
+  %br
+  = raw message.content
+  %hr

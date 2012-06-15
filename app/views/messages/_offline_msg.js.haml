@@ -1,5 +1,5 @@
 - to = @message.to
-$("#chat-content-#{to}").append("#{escape_javascript render(:partial => 'show')}");
+$("#chat-content-#{to}").append("#{escape_javascript render @message}");
 $("#chat-input-#{to}").val('');
 $("#chat-content-#{@message.to}").append("#{escape_javascript render(:partial => 'sys_msg')}");
 document.getElementById("chat-content-#{to}").scrollTop=10000;

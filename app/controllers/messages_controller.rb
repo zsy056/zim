@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_filter :signed_in_user
+  #before_filter :is_contact, only: :index
   
   def create
     to = Integer(params[:message][:to])
@@ -30,6 +31,18 @@ class MessagesController < ApplicationController
   end
   
   def index
-    @messages = Message.all
+    cid = params[:contact].to_i
+    @messages = Message.where("(`from`=#{current_user.id} AND `to`=#{cid}) OR (`from`=#{cid} AND `to`=#{current_user.id})").order("created_at DESC").all
+      .paginate(page: params[:page], per_page: 6)
+    respond_to do |format|
+      format.js
+      format.html { render :partial => 'index' }
+    end
+  end
+  
+  private
+  
+  def is_contact
+    redirect_to(root_path) unless current_user.is_contact?(User.find(params[:contact]))
   end
 end

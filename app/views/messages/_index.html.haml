@@ -1,0 +1,9 @@
+= render 'layouts/stylesheets'
+= javascript_include_tag 'application'
+= csrf_meta_tag
+= will_paginate
+%ul{ :class => 'messages' }
+  - @messages.each do |message|
+    = render message
+= will_paginate
+%div{ :id => 'dialogs' }

@@ -4,7 +4,7 @@ Zim::Application.routes.draw do
   resources :contact_groups
   resources :contacts
   resources :dialogs, only: [:show]
-  resources :messages, only: [:new, :create, :show]
+  resources :messages, only: [:new, :create, :show, :index]
   
   get "static_pages/home"
 

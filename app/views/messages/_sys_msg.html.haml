@@ -1,6 +1,8 @@
 %li
-  System
+  %span{ :class => 'msg-name'}
+    System
   %span{ :class => 'msg-time' }= Time.now
   \:
   %br
   = raw @sys_msg
+  %hr

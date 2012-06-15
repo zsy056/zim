@@ -3,8 +3,8 @@
 - sendmsg current_user.id, ["/#{to}"] do
   = render 'dialogs/show'
   :plain
-    $("#chat-content-#{from}").append("#{escape_javascript render(:partial => 'show')}");
+    $("#chat-content-#{from}").append("#{escape_javascript render @message}");
     document.getElementById("chat-content-#{from}").scrollTop=10000;
-$("#chat-content-#{to}").append("#{escape_javascript render(:partial => 'show')}");
+$("#chat-content-#{to}").append("#{escape_javascript render @message}");
 $("#chat-input-#{to}").val('');
 document.getElementById("chat-content-#{to}").scrollTop=10000;

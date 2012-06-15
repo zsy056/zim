@@ -10,5 +10,7 @@
     = link_to 'Delete Contact', contact, :remote => true, method: :delete, confirm: 'You sure?'
     %br
     = link_to 'Edit', edit_contact_path(contact), :remote => true
+    |
+    = link_to 'View Message Records', messages_path(:contact=>contact.contact_id), :remote => true
   - elsif user.id != current_user.id
     = link_to 'Add Contact', new_contact_path+"?id=#{user.id}", :remote => true
