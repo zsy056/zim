@@ -12,7 +12,7 @@
             %li= link_to 'Cycles', contact_groups_path, :remote => true
             %li{ :id => "fat-menu", :class =>"dropdown" }
               %a{ :href => "#", :class => "dropdown-toggle", "data-toggle" => "dropdown" } 
-                Account
+                %span{ :id => 'account-stat' }= current_user.name
                 %b{ :class => "caret" }
               %ul{ :class => "dropdown-menu" }
                 %li
@@ -31,9 +31,11 @@
     function on_line(){
       $('#heart-beat-form').submit();
       $('#status-tog').replaceWith("<a href='#' onclick='off_line()' id='status-tog'>Get off line</a>"); 
+      $('#account-stat').html('#{current_user.name} - Online');
     }
 
     function off_line(){
       $('#leave-form').submit();
       $('#status-tog').replaceWith("<a href='#' onclick='on_line()' id='status-tog'>Get on line</a>"); 
+      $('#account-stat').html('#{current_user.name} - Offline');
     }

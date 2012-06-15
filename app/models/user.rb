@@ -52,6 +52,11 @@ class User < ActiveRecord::Base
       display_name = contact.contact_alias + " (#{name})"
     end
     display_name ||= name
+    if ($redis.get id) != nil
+      display_name += ' - Online'
+    else
+      display_name += ' - Offline'
+    end
   end
 
   def add_contact!(other_user, group_id, new_contact_alias)

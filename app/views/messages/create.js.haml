@@ -26,6 +26,6 @@
         dialogClass: "dialogWithDropShadow"
       });
     }
-  $("#chat-content-#{from}").append("#{escape_javascript render(:partial => 'show')}");
-$("#chat-content-#{to}").append("#{escape_javascript render(:partial => 'show')}");
+  $("#chat-content-#{from}").append("#{escape_javascript render @message}");
+$("#chat-content-#{to}").append("#{escape_javascript render @message}");
 $("#chat-input-#{to}").val('');

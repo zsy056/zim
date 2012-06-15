@@ -1,5 +1,6 @@
 - if signed_in?
   alert('Settings updated!');
   $('#edit-dialog-#{@user.id}').wijdialog('close');
+  location.reload();
   - sendmsg -1, ["/#{current_user.id}"] do
     = render 'shared/update_contacts_bar'

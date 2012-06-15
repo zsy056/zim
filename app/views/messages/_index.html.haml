@@ -3,6 +3,8 @@
 = csrf_meta_tag
 = will_paginate
 %ul{ :class => 'messages' }
+  - if @messages.size == 0
+    No Record
   - @messages.each do |message|
     = render message
 = will_paginate

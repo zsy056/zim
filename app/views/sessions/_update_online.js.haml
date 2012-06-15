@@ -9,14 +9,17 @@
     - sendmsg from, ["/#{to}"] do
       = render 'dialogs/show'
       :plain
-        $("#chat-content-#{from}").append("#{escape_javascript render(:partial => 'messages/show')}");
+        $("#chat-content-#{from}").append("#{escape_javascript render @message}");
         document.getElementById("chat-content-#{from}").scrollTop=10000;
     - msg.is_sent = true
     - msg.save
 - for rcontact in @rcontacts
   - to = rcontact.owner.id
-  - if $redis.get to != nil
+  - if ($redis.get to) != nil
     - sendmsg current_user.id, ["/#{to}"] do
       :plain
-        $("#online-status-#{@my_id}").html("#{@online_msg}");
+        $("#contact-status-#{@my_id}").html("#{rcontact.owner.get_display_name_by_id(current_user.id)}");
+        if(document.getElementById('dialog-#{@my_id}')) {
+          $('#dialog-#{@my_id}').wijdialog({title: '#{rcontact.owner.get_display_name_by_id(current_user.id)}'});
+        }
 

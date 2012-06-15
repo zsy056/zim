@@ -10,13 +10,8 @@
             = link_to(dialog_path(tid), :remote => true) do 
               %span  
                 %img{ :src => "#{gravatar(contact.contact, :size => 28)}" }
-                - if contact.contact_alias != nil
-                  = contact.contact_alias
-                  (#{contact.contact.name})
-                - else
-                  = contact.contact.name
-                %div{ :id => "online-status-#{tid}" }
-                  = online_status(tid)
+                %br
+                %span{ :id => "contact-status-#{tid}", :class => "contacts-contact" }= current_user.get_display_name_by_id(tid)
 :javascript
     $(function() {
       $("#contacts").wijtree({

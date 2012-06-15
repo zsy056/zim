@@ -1,8 +1,6 @@
 .chat-dialog{ :id => "dialog-#{@dialog_id}", :title => "#{current_user.get_display_name_by_id(@dialog_id)}", :style => "overflow-y: hidden;" }
-  %div{ :class => 'chat-content', :id => "chat-content-#{@dialog_id}", :style => "height:65%; width:100%; overflow-y:auto;",
-   :readonly => 'true' }
+  .chat-content{ :id => "chat-content-#{@dialog_id}", :style => "height:65%; width:100%; overflow-y:auto;" }
   .input-sec
     = form_for Message.new, :remote => true, :html => { :id => "chat-#{@dialog_id}" } do |f|
-      //= f.kindeditor :content
       = f.text_area :content, :class => 'chat-input', :rows => 3, :required => true, :id => "chat-input-#{@dialog_id}", :style => 'height: 150px; width:100%;'
       = f.hidden_field :to, :value => @dialog_id
